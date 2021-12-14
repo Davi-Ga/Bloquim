@@ -27,7 +27,7 @@ public class anotacaoController {
 
     @FXML
     void fechaAba(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
@@ -37,7 +37,7 @@ public class anotacaoController {
 
     @FXML
     void voltaTela(ActionEvent event) {
-
+        
     }
 
 }

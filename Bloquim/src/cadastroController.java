@@ -4,9 +4,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-import static validadorDeTexto.validadorDeTexto.verificaNomeUsuario;
-
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
