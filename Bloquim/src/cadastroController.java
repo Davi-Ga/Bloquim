@@ -86,7 +86,6 @@ public class cadastroController {
         }
         else{
             erroMensagemText.setVisible(false);
-            // erroMensagemText.setText("Tudo certo");
         }
     }
 
