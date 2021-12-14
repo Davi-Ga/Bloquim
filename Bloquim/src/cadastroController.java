@@ -4,12 +4,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
+import static validadorDeTexto.validadorDeTexto.verificaNomeUsuario;
+
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import validadorDeTexto.validadorDeTexto;
 
 public class cadastroController {
 
@@ -54,6 +58,13 @@ public class cadastroController {
 
     @FXML
     void finalizaCadastro(ActionEvent event) {
+
+        if(!validadorDeTexto.verificaNomeUsuario(nomeTextBox.getText())){
+            erroMensagemText.setVisible(true);
+            System.out.println("O usuário digitado é inválido");
+            erroMensagemText.setText("O usuário digitado é inválido");
+            return;
+        }
         if(!validadorDeTexto.validarEmail(emailTextBox.getText())){
             System.out.println("Email inválido");
             erroMensagemText.setVisible(true);
@@ -67,8 +78,15 @@ public class cadastroController {
             erroMensagemText.setText("A senha digitada é inválida");
             return;
         }
+        if(!senhaTextBox.getText().equals(confirmaSenhaTextBox.getText())){
+            erroMensagemText.setVisible(true);
+            erroMensagemText.setText("As senhas não confirmam");
+
+            System.out.println("As senhas não confirmam");
+        }
         else{
             erroMensagemText.setVisible(false);
+            // erroMensagemText.setText("Tudo certo");
         }
     }
 
