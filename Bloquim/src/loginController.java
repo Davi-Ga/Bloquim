@@ -38,7 +38,7 @@ public class loginController {
 
     @FXML
     void fechaAba(ActionEvent event) {
-        System.exit(0);
+        
     }
 
     @FXML
