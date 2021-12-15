@@ -17,6 +17,11 @@ public class loginController {
     private String nomeUsuarioStringDeComparacao = "batata";
     private String senhaUsuarioStringDeComparacao = "batata123";
     
+    private String email = "papapa";
+
+    public String retornaEmail(){
+        return this.email;
+    }
 
     @FXML
     private Button cadastreSeBtn;

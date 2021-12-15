@@ -17,6 +17,7 @@ public class anotacaoController {
     public void initialize() throws IOException {
         
         mostrarTelaDeLogin();
+    
     }
 
     @FXML
@@ -65,7 +66,7 @@ public class anotacaoController {
     }
 
 
-    private void mostrarTelaDeLogin() throws IOException{
+    private String mostrarTelaDeLogin() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene((Parent) root));
@@ -73,6 +74,8 @@ public class anotacaoController {
         stage.showAndWait();
         // Hide this current window (if this is what you want)
         //((Node)(event.getSource())).getScene().getWindow().hide();
+        String retorno = stage.getScene().getClass().getMethod(, parameterTypes)
+        return root.getClass().getResource("loginController");
     }
 
 }
