@@ -5,12 +5,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import validadorDeTexto.validadorDeTexto;
+
 
 public class cadastroController {
 
@@ -45,23 +49,25 @@ public class cadastroController {
 
     @FXML
     void emailUsuario(ActionEvent event) {
-
-    }
-
+         
+}
     @FXML
     void fechaAba(ActionEvent event) {
         System.exit(0);
     }
 
     @FXML
-    void finalizaCadastro(ActionEvent event) {
-
+    void finalizaCadastro(ActionEvent event) throws SQLException {
+            
+            
+        
         if(!validadorDeTexto.verificaNomeUsuario(nomeTextBox.getText())){
             erroMensagemText.setVisible(true);
             System.out.println("O usuário digitado é inválido");
             erroMensagemText.setText("O usuário digitado é inválido");
             return;
         }
+    
         if(!validadorDeTexto.validarEmail(emailTextBox.getText())){
             System.out.println("Email inválido");
             erroMensagemText.setVisible(true);
@@ -84,7 +90,27 @@ public class cadastroController {
         else{
             erroMensagemText.setVisible(false);
             
+<<<<<<< HEAD
+=======
+            String usuario = nomeTextBox.getText();
+            String senha = senhaTextBox.getText();
+            String email = emailTextBox.getText();
+
+            Connection conexaoBD = new conexaoBancoDeDados().getConnection();
+            String sql = "INSERT INTO login(usuario,senha,email) VALUES ('";
+            String valores = usuario+"','"+senha+"','"+email+"'); ";
+            String cadastroEnviado = sql + valores;
+
+            PreparedStatement stnt= conexaoBD.prepareStatement(cadastroEnviado);
+            stnt.execute();
+
+            conexaoBD.close();
+
+>>>>>>> 9b3920a3354cdf414b4cdc562cdd2d0f4c295b31
         }
+        
+        
+    
     }
 
     @FXML
