@@ -9,17 +9,17 @@ public class conexaoBancoDeDados{
         return conexaoBancoDeDados;
     }
 }
-/*public static void closeConnection(Connection con, PreparedStatement stnt){
+/*String usuario = nomeTextBox.getText();
+            String senha = senhaTextBox.getText();
+            String email = emailTextBox.getText();
 
-    closeConnection(con,stnt);
-    
-        try{
-            if(stnt!=null){
-                stnt.close();
-            }
+            Connection conexaoBD = new conexaoBancoDeDados().getConnection();
+            String sql = "INSERT INTO login(usuario,senha,email) VALUES ('";
+            String valores = usuario+"','"+senha+"','"+email+"'); ";
+            String cadastroEnviado = sql + valores;
 
-                }catch(SQLException ex){
-                    Logger.getLogger(factoryBancoDeDados.class.getName()).log(Level.SEVERE,null,ex);
-                }
-    }
-}*/
+            PreparedStatement stnt= conexaoBD.prepareStatement(cadastroEnviado);
+            stnt.execute();
+
+            conexaoBD.close();*/
+
