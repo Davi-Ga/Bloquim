@@ -12,7 +12,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
+        //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAnotacao.fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
