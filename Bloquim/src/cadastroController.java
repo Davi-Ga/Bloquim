@@ -83,6 +83,7 @@ public class cadastroController {
         }
         else{
             erroMensagemText.setVisible(false);
+            
         }
     }
 
