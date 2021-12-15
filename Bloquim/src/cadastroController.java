@@ -59,8 +59,7 @@ public class cadastroController {
     @FXML
     void finalizaCadastro(ActionEvent event) throws SQLException {
             
-            
-        
+
         if(!validadorDeTexto.verificaNomeUsuario(nomeTextBox.getText())){
             erroMensagemText.setVisible(true);
             System.out.println("O usuário digitado é inválido");
@@ -91,9 +90,6 @@ public class cadastroController {
             erroMensagemText.setVisible(false);
             
         }
-        
-        
-    
     }
 
     @FXML

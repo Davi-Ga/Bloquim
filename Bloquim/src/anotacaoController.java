@@ -13,12 +13,16 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class anotacaoController {
+<<<<<<< HEAD
     @FXML
     public void initialize() throws IOException {
         
         mostrarTelaDeLogin();
     
     }
+=======
+    
+>>>>>>> 32e105802125e16cd0dd6d4be091f3d3e553686c
 
     @FXML
     private Button Anotação;
@@ -54,18 +58,12 @@ public class anotacaoController {
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setHeaderText("Quer mesmo voltar à tela de Login?");
-        alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff");
-        if(alert.showAndWait().get() != ButtonType.OK){
-            return;
-        }
-        else{
-            mostrarTelaDeLogin();
-        }
+        
+        
     }
 
 
+<<<<<<< HEAD
     private String mostrarTelaDeLogin() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Stage stage = new Stage();
@@ -78,4 +76,6 @@ public class anotacaoController {
         return root.getClass().getResource("loginController");
     }
 
+=======
+>>>>>>> 32e105802125e16cd0dd6d4be091f3d3e553686c
 }
