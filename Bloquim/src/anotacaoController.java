@@ -1,6 +1,4 @@
 import java.io.IOException;
-
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,7 +68,6 @@ public class anotacaoController {
     private void mostrarTelaDeLogin() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
         stage.setScene(new Scene((Parent) root));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.showAndWait();

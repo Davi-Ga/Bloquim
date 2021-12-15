@@ -47,28 +47,10 @@ public class loginController {
             System.out.println("A senha digitada é inválida");
         }
         else{
-
             Stage stage = (Stage) xBtn.getScene().getWindow();
             stage.close();
-            // Parent root;
-            // try {
-            //     root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacao.fxml"));
-            //     Stage stage = new Stage();
-            //     stage.setTitle("My New Stage Title");
-            //     stage.setScene(new Scene(root));
-            //     stage.initStyle(StageStyle.UNDECORATED);
-            //     stage.show();
-            //     // Hide this current window (if this is what you want)
-            //     //((Node)(event.getSource())).getScene().getWindow().hide();
-                
-            // }
-            // catch (IOException e) {
-            //     e.printStackTrace();
-            // }
-
-
-            
         }
+            
     }
 
     @FXML
