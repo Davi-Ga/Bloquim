@@ -1,51 +1,62 @@
 @startuml BloquimDiagramaClasse
 
-class Usuario{
+class loginController{
+    -usuario: String
     -senha : String  
 
-    #verificaSenha() : void 
-    +completaLogin() : void
+    + irCadastro() : void
+    # verificaSenha() : void 
+    + completaLogin() : void
+}
+class cadastroController{
+    -usuario: String
+    -senha : String  
+    -email : String
+
+    + realizaCadastro() : void
+    # verificaSenha() : void 
+    + realizaCadastro() : void
 }
 
-class Anotacoes{
-    +disciplina : String
-    -anotacoes : String
-    +dataModificacao : String
 
-    +marcacoes() : void
+class anotacaoController{
+    + conteudo : String
+    - anotacoes : String
+    + dataModificacao : String
+
+    + marcacoes() : void
+    + adicionaAnotacoes() : void
 }
 
-class Caderno{
+class caderno{
     + nome : String 
     - <Anotacoes> : list
-    + dataCriacao : date 
-    + dataModificacao : date 
-
-    
+    + dataCriacao : int 
+    + dataModificacao : int 
 
 }
 
-class CadernoAnotacoes{
+class controllerCadernoNormal{
 
-    +disciplina : String
-    +capitulos : String 
+    + disciplina : String
+    + capitulos : String 
 
-    +inserirAnotacoes() : void
 
+    + inserirCadernos() : void
 }
 
-class CadernoDiario{
+class controllerCadernoDiario{
 
-    +humorDoDia : byte
+    + humorDoDia : int
 
-    #verificarCondicoesParaInserirAnotacao() : boolean 
-    +inserirAnotacoes() : void 
+    # verificarCondicoesParaInserirCaderno() : boolean 
+    + inserirAnotacoes() : void 
 }
 
-Usuario "1" -- "0.."Caderno :Entra no >
-CadernoAnotacoes  "1.." o-- "1.." Anotacoes : < Pertence à 
-CadernoDiario "1.." o-- "1.." Anotacoes : < Pertence à
-Caderno "1" *-- "1.." CadernoAnotacoes : < É um tipo
-Caderno "1" *-- "1.." CadernoDiario : < É um tipo
+loginController "1" -- "0.."caderno:Entra no >
+controllerCadernoNormal  "1.." -- "1.." anotacaoController : < Pertence à 
+controllerCadernoDiario "1.." -- "1.." anotacaoController : < Pertence à
+caderno "1" -- "1.." controllerCadernoNormal : < É um tipo
+caderno "1" -- "1.." controllerCadernoDiario : < É um tipo
 
 @enduml
