@@ -13,16 +13,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class anotacaoController {
-<<<<<<< HEAD
-    @FXML
+   /* @FXML
     public void initialize() throws IOException {
         
         mostrarTelaDeLogin();
     
-    }
-=======
-    
->>>>>>> 32e105802125e16cd0dd6d4be091f3d3e553686c
+    }*/
 
     @FXML
     private Button Anotação;
@@ -63,8 +59,7 @@ public class anotacaoController {
     }
 
 
-<<<<<<< HEAD
-    private String mostrarTelaDeLogin() throws IOException{
+   /*private String mostrarTelaDeLogin() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Stage stage = new Stage();
         stage.setScene(new Scene((Parent) root));
@@ -75,7 +70,5 @@ public class anotacaoController {
         String retorno = stage.getScene().getClass().getMethod(, parameterTypes)
         return root.getClass().getResource("loginController");
     }
-
-=======
->>>>>>> 32e105802125e16cd0dd6d4be091f3d3e553686c
+*/
 }

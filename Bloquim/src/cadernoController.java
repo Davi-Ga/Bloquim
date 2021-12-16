@@ -24,10 +24,18 @@ public class cadernoController {
     private Button cadernoBD;
 
     @FXML
+    private Button diarioBtn;
+
+    @FXML
     private Button voltarBtn;
 
     @FXML
     private Button xBtn;
+
+    @FXML
+    void irDiario(ActionEvent event) throws IOException {
+        mostrarTelaDoDiario();
+    }
 
     @FXML
     void adicionaCadernoNovo(ActionEvent event) {
@@ -36,7 +44,7 @@ public class cadernoController {
 
     @FXML
     void fechaAba(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
@@ -64,7 +72,14 @@ public class cadernoController {
         login.setScene(new Scene((Parent) root));
         login.initStyle(StageStyle.UNDECORATED);
         login.showAndWait();
-        
+    }
+
+    private void mostrarTelaDoDiario() throws IOException{
+        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
+        Stage diario = new Stage();
+        diario.setScene(new Scene((Parent) root));
+        diario.initStyle(StageStyle.UNDECORATED);
+        diario.show();
     }
 
 }
