@@ -13,12 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class anotacaoController {
-   /* @FXML
-    public void initialize() throws IOException {
-        
-        mostrarTelaDeLogin();
-    
-    }*/
+   
 
     @FXML
     private Button Anotação;

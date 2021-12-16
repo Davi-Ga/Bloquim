@@ -30,21 +30,16 @@ class anotacaoController{
     + verAnotacao(): void
 }
 
-class caderno{
-    + nome : String 
-    - <Anotacoes> : list
-    + dataCriacao : int 
-    + dataModificacao : int 
-
-}
 
 class cadernoController{
 
+    +nome
+    +dataCriacao
     + disciplina : String
     + capitulos : String 
 
     + inserirCadernos() : void
-
+    + irCadernoDiario() : void
 }
 
 class cadernoDiarioController{
@@ -56,11 +51,10 @@ class cadernoDiarioController{
     + vaiParaAnotacaoDiario() : void
 }
 
-loginController "1" -- "0.."caderno:Entra no >
-cadernoController  "1.." o-- "1.." anotacaoController : < Pertence à 
-cadernoDiarioController "1.." o-- "1.." anotacaoController : < Pertence à
-caderno "1" -- "1.." cadernoController : < É um tipo
-caderno "1" -- "1.." cadernoDiarioController : < É um tipo
-cadastroController "1.." - "1" loginController
+loginController "1" -- "0.."cadernoController:Entra no >
+cadernoController  "1.." -- "1.." anotacaoController : < Pertence à 
+cadernoDiarioController "1.." -- "1.." anotacaoController : < Pertence à
+cadernoController "1" <|- "1.." cadernoDiarioController : < É um tipo
+cadastroController "1.." - "1" loginController : < Permite 
 
 @enduml

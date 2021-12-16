@@ -13,11 +13,11 @@ import javafx.stage.StageStyle;
 import javafx.scene.Node;
 
 public class cadernoController {
-    /*@FXML
+    @FXML
     public void initialize() throws IOException {
         
         mostrarTelaDeLogin();
-    }*/
+    }
     @FXML
     private Button addCadernoBtn;
 
