@@ -8,14 +8,15 @@ class loginController{
     # verificaSenha() : void 
     + completaLogin() : void
 }
+
 class cadastroController{
     -usuario: String
     -senha : String  
     -email : String
 
-    + realizaCadastro() : void
-    # verificaSenha() : void 
-    + realizaCadastro() : void
+    + finalizaCadastro() : void
+    # voltaTela() : void 
+    + fecharAba() : void
 }
 
 
@@ -25,7 +26,8 @@ class anotacaoController{
     + dataModificacao : String
 
     + marcacoes() : void
-    + adicionaAnotacoes() : void
+    + adicionaAnotacao() : void
+    + verAnotacao(): void
 }
 
 class caderno{
@@ -36,27 +38,29 @@ class caderno{
 
 }
 
-class controllerCadernoNormal{
+class cadernoController{
 
     + disciplina : String
     + capitulos : String 
 
-
     + inserirCadernos() : void
+
 }
 
-class controllerCadernoDiario{
+class cadernoDiarioController{
 
     + humorDoDia : int
 
     # verificarCondicoesParaInserirCaderno() : boolean 
-    + inserirAnotacoes() : void 
+    + inserirAnotacaoDiario() : void 
+    + vaiParaAnotacaoDiario() : void
 }
 
 loginController "1" -- "0.."caderno:Entra no >
-controllerCadernoNormal  "1.." -- "1.." anotacaoController : < Pertence à 
-controllerCadernoDiario "1.." -- "1.." anotacaoController : < Pertence à
-caderno "1" -- "1.." controllerCadernoNormal : < É um tipo
-caderno "1" -- "1.." controllerCadernoDiario : < É um tipo
+cadernoController  "1.." o-- "1.." anotacaoController : < Pertence à 
+cadernoDiarioController "1.." o-- "1.." anotacaoController : < Pertence à
+caderno "1" -- "1.." cadernoController : < É um tipo
+caderno "1" -- "1.." cadernoDiarioController : < É um tipo
+cadastroController "1.." - "1" loginController
 
 @enduml
