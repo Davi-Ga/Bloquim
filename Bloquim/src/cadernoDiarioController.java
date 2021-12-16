@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +36,6 @@ public class cadernoDiarioController extends cadernoController {
     void fechaAba(ActionEvent event) {
         System.exit(0);
     }
-
-
 
     @FXML
     void vaiParaAnotacaoDiario(ActionEvent event) {

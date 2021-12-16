@@ -83,8 +83,8 @@ public class cadastroController {
         if(!senhaTextBox.getText().equals(confirmaSenhaTextBox.getText())){
             erroMensagemText.setVisible(true);
             erroMensagemText.setText("As senhas não confirmam");
-
             System.out.println("As senhas não confirmam");
+            return;
         }
         else{
             erroMensagemText.setVisible(false);

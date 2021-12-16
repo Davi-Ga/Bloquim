@@ -16,11 +16,11 @@ public class loginController {
 
     private String nomeUsuarioStringDeComparacao = "batata";
     private String senhaUsuarioStringDeComparacao = "batata123";
-    private String email = "papapa";
+    /*private String email = "papapa";
 
     public String retornaEmail(){
         return this.email;
-    }
+    }*/
 
     @FXML
     private Button cadastreSeBtn;
@@ -44,10 +44,11 @@ public class loginController {
     void entrarApp(ActionEvent event) throws IOException  {
         if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
             System.out.println("O nome de usuário digitado é inválido");
-            
+            return;
         }
         else if(!senhaTextBox.getText().equals(senhaUsuarioStringDeComparacao)){
             System.out.println("A senha digitada é inválida");
+            return;
         }
         else{
             Stage stage = (Stage) xBtn.getScene().getWindow();
@@ -60,8 +61,6 @@ public class loginController {
     void fechaAba(ActionEvent event) {
         System.exit(0);
     }
-
-    
 
     @FXML
     void nomeUsuario(ActionEvent event) {
