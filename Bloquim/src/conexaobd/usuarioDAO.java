@@ -3,6 +3,7 @@ package conexaobd;
 import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class usuarioDAO {
 
@@ -12,7 +13,7 @@ public class usuarioDAO {
         this.conexao = conexao;
     }
 
-    public void inserir(usuario usuariol){
+    public void inserir(usuario usuariol) throws SQLException{
     
             
         String sql = "INSERT INTO login(usuario,senha,email) VALUES ('"+usuariol.getnome()+"','"+usuariol.getsenha()+"','"+usuariol.getemail()+"');";
@@ -21,4 +22,3 @@ public class usuarioDAO {
         conexao.close();
     }
 }
-,
