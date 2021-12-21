@@ -4,9 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.Node;
@@ -15,7 +18,7 @@ import javafx.scene.Scene;
 
 public class loginController {
 
-     private String nomeUsuarioStringDeComparacao = "batata";
+    private String nomeUsuarioStringDeComparacao = "batata";
     private String senhaUsuarioStringDeComparacao = "batata123";
   
 
@@ -56,8 +59,17 @@ public class loginController {
 
     @FXML
     void fechaAba(ActionEvent event) {
-        System.exit(0);
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+        }
     }
+    
 
     @FXML
     void nomeUsuario(ActionEvent event) {

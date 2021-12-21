@@ -16,7 +16,7 @@ public class cadernoController {
     @FXML
     public void initialize() throws IOException {
        
-            mostrarTelaDeLogin();
+        mostrarTelaDeLogin();
        
     } 
     @FXML
@@ -36,6 +36,8 @@ public class cadernoController {
 
     @FXML
     void irDiario(ActionEvent event) throws IOException {
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
         mostrarTelaDoDiario();
     }
 
@@ -46,10 +48,10 @@ public class cadernoController {
 
     @FXML
     void fechaAba(ActionEvent event) throws IOException {
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setHeaderText("Quer mesmo fechar o aplicativo?");
-        alert.setContentText("Bloquim sentirá a sua falta.");
-        if(alert.showAndWait().get() != ButtonType.OK){
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
             return;
         }
         else{
@@ -59,8 +61,8 @@ public class cadernoController {
     
 
     @FXML
-    void vaiParaAnotacao(ActionEvent event) {
-
+    void vaiParaAnotacao(ActionEvent event) throws IOException {
+        mostrarTelaDeAnotação();
     }
 
     @FXML
@@ -92,6 +94,14 @@ public class cadernoController {
         diario.initStyle(StageStyle.UNDECORATED);
         diario.show();
     }
+    private void mostrarTelaDeAnotação() throws IOException{
+        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacao.fxml"));
+        Stage anotacao = new Stage();
+        anotacao.setScene(new Scene((Parent) root));
+        anotacao.initStyle(StageStyle.UNDECORATED);
+        anotacao.showAndWait();
+    }
+
 
 }
     
