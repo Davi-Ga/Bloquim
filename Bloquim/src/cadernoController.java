@@ -15,9 +15,10 @@ import javafx.scene.Node;
 public class cadernoController {
     @FXML
     public void initialize() throws IOException {
-        
-        mostrarTelaDeLogin();
-    }
+       
+            mostrarTelaDeLogin();
+       
+    } 
     @FXML
     private Button addCadernoBtn;
 
@@ -35,13 +36,7 @@ public class cadernoController {
 
     @FXML
     void irDiario(ActionEvent event) throws IOException {
-        Stage login = (Stage) xBtn.getScene().getWindow();
-        login.close();
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
-        Stage diarioStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene diarioScene = new Scene(root);
-        diarioStage.setScene(diarioScene);
-        diarioStage.show();
+        mostrarTelaDoDiario();
     }
 
     @FXML
@@ -50,9 +45,18 @@ public class cadernoController {
     }
 
     @FXML
-    void fechaAba(ActionEvent event) {
-        System.exit(0);
+    void fechaAba(ActionEvent event) throws IOException {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alert.setContentText("Bloquim sentirá a sua falta.");
+        if(alert.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+        }
     }
+    
 
     @FXML
     void vaiParaAnotacao(ActionEvent event) {
@@ -63,7 +67,7 @@ public class cadernoController {
     void voltaTela(ActionEvent event) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText("Quer mesmo voltar à tela de Login?");
-        alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff");
+        alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff.");
         if(alert.showAndWait().get() != ButtonType.OK){
             return;
         }
@@ -81,13 +85,13 @@ public class cadernoController {
         login.showAndWait();
     }
 
-    /*private void mostrarTelaDoDiario() throws IOException{
+    private void mostrarTelaDoDiario() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
         Stage diario = new Stage();
         diario.setScene(new Scene((Parent) root));
         diario.initStyle(StageStyle.UNDECORATED);
-        diario.showAndWait();
-    }*/
+        diario.show();
+    }
 
 }
     

@@ -8,19 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 
 
 public class loginController {
 
-   /* private String nomeUsuarioStringDeComparacao = "batata";
-    private String senhaUsuarioStringDeComparacao = "batata123";*/
-    /*private String email = "papapa";
-
-    public String retornaEmail(){
-        return this.email;
-    }*/
+     private String nomeUsuarioStringDeComparacao = "batata";
+    private String senhaUsuarioStringDeComparacao = "batata123";
+  
 
     @FXML
     private Button cadastreSeBtn;
@@ -42,7 +39,7 @@ public class loginController {
 
     @FXML
     void entrarApp(ActionEvent event) throws IOException  {
-        /*if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
+        if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
             System.out.println("O nome de usuário digitado é inválido");
             return;
         }
@@ -53,7 +50,7 @@ public class loginController {
         else{
             Stage stage = (Stage) xBtn.getScene().getWindow();
             stage.close();
-        }*/
+        }
             
     }
 

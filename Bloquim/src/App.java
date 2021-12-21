@@ -12,14 +12,16 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         primaryStage.setScene(tela);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
-        
+
     }
+
 }
 
 
