@@ -17,7 +17,6 @@ public class cadernoDiarioController extends cadernoController {
     @FXML
     private Button anotacaoDiario;
 
-
     @FXML
     private Text nomePessoa;
 
@@ -29,7 +28,7 @@ public class cadernoDiarioController extends cadernoController {
 
     @FXML
     void adicionaAnotacaoDiario(ActionEvent event) {
-
+        
     }
 
     @FXML
@@ -44,8 +43,8 @@ public class cadernoDiarioController extends cadernoController {
 
     @FXML
     void voltaTela(ActionEvent event) {
-        /*Stage stage = (Stage) xBtn.getScene().getWindow();
-        stage.close();*/
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
     }
 
 }
