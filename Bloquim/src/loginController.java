@@ -14,8 +14,8 @@ import javafx.scene.Scene;
 
 public class loginController {
 
-    private String nomeUsuarioStringDeComparacao = "batata";
-    private String senhaUsuarioStringDeComparacao = "batata123";
+   /* private String nomeUsuarioStringDeComparacao = "batata";
+    private String senhaUsuarioStringDeComparacao = "batata123";*/
     /*private String email = "papapa";
 
     public String retornaEmail(){
@@ -42,7 +42,7 @@ public class loginController {
 
     @FXML
     void entrarApp(ActionEvent event) throws IOException  {
-        if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
+        /*if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
             System.out.println("O nome de usuário digitado é inválido");
             return;
         }
@@ -53,7 +53,7 @@ public class loginController {
         else{
             Stage stage = (Stage) xBtn.getScene().getWindow();
             stage.close();
-        }
+        }*/
             
     }
 

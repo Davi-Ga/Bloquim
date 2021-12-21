@@ -10,17 +10,3 @@ public class conexaoBancoDeDados{
         return conexaoBancoDeDados;
     }
 }
-/*String usuario = nomeTextBox.getText();
-            String senha = senhaTextBox.getText();
-            String email = emailTextBox.getText();
-
-            Connection conexaoBD = new conexaoBancoDeDados().getConnection();
-            String sql = "INSERT INTO login(usuario,senha,email) VALUES ('";
-            String valores = usuario+"','"+senha+"','"+email+"'); ";
-            String cadastroEnviado = sql + valores;
-
-            PreparedStatement stnt= conexaoBD.prepareStatement(cadastroEnviado);
-            stnt.execute();
-
-            conexaoBD.close();*/
-

@@ -16,7 +16,7 @@ public class usuarioDAO {
     public void inserir(usuario usuariol) throws SQLException{
     
             
-        String sql = "INSERT INTO login(usuario,senha,email) VALUES ('"+usuariol.getnome()+"','"+usuariol.getsenha()+"','"+usuariol.getemail()+"');";
+        String sql = "INSERT INTO login(nome,senha,email) VALUES ('"+usuariol.getnome()+"','"+usuariol.getsenha()+"','"+usuariol.getemail()+"');";
         PreparedStatement stnt= conexao.prepareStatement(sql);
         stnt.execute();
         conexao.close();

@@ -28,7 +28,7 @@ public class usuario {
 
 
         public String getemail(){
-            return senha;
+            return email;
         }
         public void setemail(String email){
             this.email = email;

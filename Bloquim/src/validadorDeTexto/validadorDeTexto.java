@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class validadorDeTexto {
 
     public static boolean verificaNomeUsuario(String nomeUsuario){
-        if(!nomeUsuario.isEmpty()){
+        if(!nomeUsuario.isEmpty() || nomeUsuario.length()<2){
             return true;
         }
         return false;
@@ -28,7 +28,7 @@ public class validadorDeTexto {
 
     public static boolean validarSenha(String senhaText) {
         boolean resposta = false;
-        if(senhaText.length()>8 && senhaText!=null){
+        if(senhaText.length()>4 || senhaText!=null){
             resposta=true;
         }
         return resposta;
