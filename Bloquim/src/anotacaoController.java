@@ -36,7 +36,6 @@ public class anotacaoController {
 
     }
 
-
     @FXML
     void fechaAba(ActionEvent event) {
         System.exit(0);
