@@ -19,16 +19,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import validadorDeTexto.validadorDeTexto;
-import java.util.Properties;
-import javax.mail.Address;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 
 
 public class cadastroController {
@@ -135,7 +125,6 @@ public class cadastroController {
         usuarioDAO.inserir(loginUsuario);
 
         conexao.close();
-        
     }
     
     private void voltaTelaLogin() throws IOException{
