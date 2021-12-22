@@ -14,10 +14,18 @@ import javafx.scene.Node;
 
 public class cadernoController {
     @FXML
+<<<<<<< HEAD
     public void initialize(Boolean exibirLogin) throws IOException {
         
         mostrarTelaDeLogin();
     }
+=======
+    public void initialize() throws IOException {
+       
+        mostrarTelaDeLogin();
+       
+    } 
+>>>>>>> fa9b3541668fe8a2c2a763913440fe81a8541ad8
     @FXML
     private Button addCadernoBtn;
 
@@ -35,13 +43,9 @@ public class cadernoController {
 
     @FXML
     void irDiario(ActionEvent event) throws IOException {
-        Stage login = (Stage) xBtn.getScene().getWindow();
-        login.close();
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
-        Stage diarioStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene diarioScene = new Scene(root);
-        diarioStage.setScene(diarioScene);
-        diarioStage.show();
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
+        mostrarTelaDoDiario();
     }
 
     @FXML
@@ -50,20 +54,29 @@ public class cadernoController {
     }
 
     @FXML
-    void fechaAba(ActionEvent event) {
-        System.exit(0);
+    void fechaAba(ActionEvent event) throws IOException {
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+        }
     }
+    
 
     @FXML
-    void vaiParaAnotacao(ActionEvent event) {
-
+    void vaiParaAnotacao(ActionEvent event) throws IOException {
+        mostrarTelaDeAnotação();
     }
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText("Quer mesmo voltar à tela de Login?");
-        alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff");
+        alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff.");
         if(alert.showAndWait().get() != ButtonType.OK){
             return;
         }
@@ -86,8 +99,21 @@ public class cadernoController {
         Stage diario = new Stage();
         diario.setScene(new Scene((Parent) root));
         diario.initStyle(StageStyle.UNDECORATED);
+<<<<<<< HEAD
         diario.showAndWait();
     }
+=======
+        diario.show();
+    }
+    private void mostrarTelaDeAnotação() throws IOException{
+        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacao.fxml"));
+        Stage anotacao = new Stage();
+        anotacao.setScene(new Scene((Parent) root));
+        anotacao.initStyle(StageStyle.UNDECORATED);
+        anotacao.showAndWait();
+    }
+
+>>>>>>> fa9b3541668fe8a2c2a763913440fe81a8541ad8
 
 }
     

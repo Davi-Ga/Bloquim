@@ -5,14 +5,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import java.io.IOException;
+import java.lang.System.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import conexaobd.conexaoBancoDeDados;
+import conexaobd.usuario;
+import conexaobd.usuarioDAO;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import validadorDeTexto.validadorDeTexto;
 
 
@@ -57,10 +62,10 @@ public class cadastroController {
     }
 
     @FXML
-    void finalizaCadastro(ActionEvent event) throws SQLException {
+    void finalizaCadastro(ActionEvent event) throws SQLException, IOException {
             
 
-        if(!validadorDeTexto.verificaNomeUsuario(nomeTextBox.getText())){
+        if(!validadorDeTexto.verificaNomeUsuario(nomeTextBox.getText()) ){
             erroMensagemText.setVisible(true);
             System.out.println("O usuário digitado é inválido");
             erroMensagemText.setText("O usuário digitado é inválido");
@@ -68,27 +73,28 @@ public class cadastroController {
         }
     
         if(!validadorDeTexto.validarEmail(emailTextBox.getText())){
-            System.out.println("Email inválido");
             erroMensagemText.setVisible(true);
+            System.out.println("Email inválido");
             erroMensagemText.setText("O email digitado é inválido");
             return;
 
         }
         if(!validadorDeTexto.validarSenha(senhaTextBox.getText())){
-            System.out.println("Senha inválida");
             erroMensagemText.setVisible(true);
+            System.out.println("Senha inválida");
             erroMensagemText.setText("A senha digitada é inválida");
             return;
         }
         if(!senhaTextBox.getText().equals(confirmaSenhaTextBox.getText())){
             erroMensagemText.setVisible(true);
             erroMensagemText.setText("As senhas não confirmam");
-
             System.out.println("As senhas não confirmam");
+            return;
         }
         else{
             erroMensagemText.setVisible(false);
-            
+            cadastroUsuario();
+            voltaTelaLogin();
         }
     }
 
@@ -104,11 +110,31 @@ public class cadastroController {
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
-        Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene loginScene = new Scene(root);
-        loginStage.setScene(loginScene);
-        loginStage.show();
+        voltaTelaLogin();
     }
 
+    private void cadastroUsuario() throws SQLException{
+        String nome = nomeTextBox.getText();
+        String senha = senhaTextBox.getText();
+        String email = emailTextBox.getText();
+        usuario loginUsuario = new usuario(nome, senha, email);
+
+        
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        usuarioDAO usuarioDAO = new usuarioDAO(conexao);
+        usuarioDAO.inserir(loginUsuario);
+
+        conexao.close();
+    }
+    
+    private void voltaTelaLogin() throws IOException{
+        Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
+        Stage voltaTelaLogin = new Stage();
+        voltaTelaLogin.setScene(new Scene((Parent) root));
+        voltaTelaLogin.initStyle(StageStyle.UNDECORATED);
+        voltaTelaLogin.showAndWait();
+    }
+
+    
+      
 }

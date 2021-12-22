@@ -13,12 +13,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class anotacaoController {
-   /* @FXML
-    public void initialize() throws IOException {
-        
-        mostrarTelaDeLogin();
-    
-    }*/
+   
 
     @FXML
     private Button Anotação;
@@ -41,11 +36,19 @@ public class anotacaoController {
 
     }
 
-
     @FXML
     void fechaAba(ActionEvent event) {
-        System.exit(0);
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+        }
     }
+    
 
     @FXML
     void verAnotação(ActionEvent event) {
@@ -54,21 +57,9 @@ public class anotacaoController {
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
-        
-        
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
+    
     }
 
-
-   /*private String mostrarTelaDeLogin() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
-        Stage stage = new Stage();
-        stage.setScene(new Scene((Parent) root));
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.showAndWait();
-        // Hide this current window (if this is what you want)
-        //((Node)(event.getSource())).getScene().getWindow().hide();
-        String retorno = stage.getScene().getClass().getMethod(, parameterTypes)
-        return root.getClass().getResource("loginController");
-    }
-*/
 }

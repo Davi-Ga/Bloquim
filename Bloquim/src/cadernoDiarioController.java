@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +17,6 @@ public class cadernoDiarioController extends cadernoController {
     @FXML
     private Button anotacaoDiario;
 
-
     @FXML
     private Text nomePessoa;
 
@@ -30,15 +28,13 @@ public class cadernoDiarioController extends cadernoController {
 
     @FXML
     void adicionaAnotacaoDiario(ActionEvent event) {
-
+        
     }
 
     @FXML
     void fechaAba(ActionEvent event) {
         System.exit(0);
     }
-
-
 
     @FXML
     void vaiParaAnotacaoDiario(ActionEvent event) {
@@ -47,8 +43,8 @@ public class cadernoDiarioController extends cadernoController {
 
     @FXML
     void voltaTela(ActionEvent event) {
-        /*Stage stage = (Stage) xBtn.getScene().getWindow();
-        stage.close();*/
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
     }
 
 }
