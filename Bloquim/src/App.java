@@ -18,6 +18,7 @@ public class App extends Application{
         primaryStage.setScene(tela);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
+    
         
     }
 }

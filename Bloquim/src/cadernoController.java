@@ -13,11 +13,11 @@ import javafx.stage.StageStyle;
 import javafx.scene.Node;
 
 public class cadernoController {
-    /*@FXML
-    public void initialize() throws IOException {
+    @FXML
+    public void initialize(Boolean exibirLogin) throws IOException {
         
         mostrarTelaDeLogin();
-    }*/
+    }
     @FXML
     private Button addCadernoBtn;
 
@@ -81,13 +81,13 @@ public class cadernoController {
         login.showAndWait();
     }
 
-    /*private void mostrarTelaDoDiario() throws IOException{
+    private void mostrarTelaDoDiario() throws IOException{
         Object root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
         Stage diario = new Stage();
         diario.setScene(new Scene((Parent) root));
         diario.initStyle(StageStyle.UNDECORATED);
         diario.showAndWait();
-    }*/
+    }
 
 }
     
