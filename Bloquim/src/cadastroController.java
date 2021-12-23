@@ -1,8 +1,11 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import java.io.IOException;
 import java.lang.System.Logger;
@@ -58,7 +61,15 @@ public class cadastroController {
 }
     @FXML
     void fechaAba(ActionEvent event) {
-        System.exit(0);
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+        }
     }
 
     @FXML
