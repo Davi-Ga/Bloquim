@@ -14,18 +14,11 @@ import javafx.scene.Node;
 
 public class cadernoController {
     @FXML
-<<<<<<< HEAD
-    public void initialize(Boolean exibirLogin) throws IOException {
-        
-        mostrarTelaDeLogin();
-    }
-=======
     public void initialize() throws IOException {
        
         mostrarTelaDeLogin();
        
     } 
->>>>>>> fa9b3541668fe8a2c2a763913440fe81a8541ad8
     @FXML
     private Button addCadernoBtn;
 
@@ -97,10 +90,6 @@ public class cadernoController {
         Stage diario = new Stage();
         diario.setScene(new Scene((Parent) root));
         diario.initStyle(StageStyle.UNDECORATED);
-<<<<<<< HEAD
-        diario.showAndWait();
-    }
-=======
         diario.show();
     }
     private void mostrarTelaDeAnotação() throws IOException{
@@ -111,7 +100,6 @@ public class cadernoController {
         anotacao.showAndWait();
     }
 
->>>>>>> fa9b3541668fe8a2c2a763913440fe81a8541ad8
 
 }
     
