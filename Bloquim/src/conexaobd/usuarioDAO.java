@@ -20,4 +20,7 @@ public class usuarioDAO {
         stnt.execute();
         conexao.close();
     }
+    public void editar (usuario usuarioe) throws SQLException{
+        
+    }
 }
