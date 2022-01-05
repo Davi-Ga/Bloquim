@@ -36,8 +36,6 @@ public class cadernoController {
 
     @FXML
     void irDiario(ActionEvent event) throws IOException {
-        Stage stage = (Stage) xBtn.getScene().getWindow();
-        stage.close();
         mostrarTelaDoDiario();
     }
 

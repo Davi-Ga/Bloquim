@@ -11,10 +11,11 @@ import javax.mail.internet.MimeMessage;
 
 public class JavaMailApp
 {
-  public static void main(String[] args) {
+  {
+    String email;
     Properties props = new Properties();
     /** Parâmetros de conexão com servidor Gmail */
-    props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
@@ -37,7 +38,7 @@ public class JavaMailApp
           //Remetente
     
           Address[] toUser = InternetAddress //Destinatário(s)
-                     .parse("davigaldinoky@gmail.com");
+                     .parse("mail");
     
           message.setRecipients(Message.RecipientType.TO, toUser);
           message.setSubject("Cadastro Concluído");//Assunto
