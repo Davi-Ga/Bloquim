@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, fulano!">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <Text fill="#3e42599b" layoutX="51.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seus cadernos">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Button fx:id="voltarBtn" mnemonicParsing="false" onAction="#voltaTela" prefHeight="47.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="&lt;" textFill="#3f435a">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Text fx:id="erroMensagemText" fill="RED" layoutX="58.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* As senhas não correspondem" visible="false" wrappingWidth="208.0030517578125">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Button layoutX="613.0" layoutY="1.0" mnemonicParsing="false" onAction="#fechaAba" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: transparent;" text="X" textFill="#3f435a" fx:id="xBtn">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text fx:id="erroMensagemEmailText" fill="RED" layoutX="58.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* E-mail inválido" visible="false" wrappingWidth="208.0030517578125">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <Button fx:id="cadernoBD" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacao" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Banco de Dados" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="addCadernoBtn" layoutX="538.0" layoutY="373.0" mnemonicParsing="false" onAction="#abreInformacoesCadernoNovo" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="irDiarioBtn" layoutX="559.0" layoutY="50.0" mnemonicParsing="false" onAction="#abreDiario" prefHeight="12.0" prefWidth="53.0" style="-fx-background-color: #3f435a;" text="Diário" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
