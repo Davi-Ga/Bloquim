@@ -54,6 +54,8 @@ public class loginController {
         else{
             
             sceneController sc = new sceneController();
+            Stage stage=(Stage)xBtn.getScene().getWindow();
+            stage.close();
             sc.trocarParaTelaCaderno(event);
         }
             

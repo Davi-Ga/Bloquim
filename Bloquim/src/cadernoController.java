@@ -82,6 +82,8 @@ public class cadernoController {
 
 
     private void mostrarTelaDeLogin(ActionEvent event) throws IOException{
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
         sceneController sc = new sceneController();
         sc.trocarParaTelaLogin(event);
         
