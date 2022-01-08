@@ -1,5 +1,10 @@
 import java.io.IOException;
+
+
+
+import application.sceneController;
 import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,13 +15,12 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.ButtonType;
 import javafx.stage.StageStyle;
-import javafx.scene.Node;
 
 public class cadernoController {
     @FXML
     public void initialize() throws IOException {
        
-        mostrarTelaDeLogin();
+        
        
     } 
     @FXML
@@ -72,17 +76,15 @@ public class cadernoController {
             return;
         }
         else{
-            mostrarTelaDeLogin();
+            mostrarTelaDeLogin(event);
         }
     }
 
 
-    private void mostrarTelaDeLogin() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
-        Stage login = new Stage();
-        login.setScene(new Scene((Parent) root));
-        login.initStyle(StageStyle.UNDECORATED);
-        login.showAndWait();
+    private void mostrarTelaDeLogin(ActionEvent event) throws IOException{
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaLogin(event);
+        
     }
 
     private void mostrarTelaDoDiario() throws IOException{

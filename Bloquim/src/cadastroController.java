@@ -8,15 +8,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import java.io.IOException;
-import java.lang.System.Logger;
+
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.SQLException;
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

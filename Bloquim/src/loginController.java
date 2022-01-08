@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 import javafx.scene.Node;
 import javafx.scene.Scene;
 
@@ -51,8 +52,9 @@ public class loginController {
             return;
         }
         else{
-            Stage stage = (Stage) xBtn.getScene().getWindow();
-            stage.close();
+            
+            sceneController sc = new sceneController();
+            sc.trocarParaTelaCaderno(event);
         }
             
     }
