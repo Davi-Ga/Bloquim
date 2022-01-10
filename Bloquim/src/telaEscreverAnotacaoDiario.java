@@ -2,15 +2,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class telaEscreverAnotacaoDiario {
 
     @FXML
-    private ChoiceBox<?> humorDia;
+    private TextArea digitarAnotacao;
 
     @FXML
-    private TextField textoAnotacao;
+    private ChoiceBox<?> humorDia;
 
     @FXML
     private TextField tituloAnotacao;
@@ -20,11 +21,6 @@ public class telaEscreverAnotacaoDiario {
 
     @FXML
     private Button xBtn;
-
-    @FXML
-    void addAnotacao(ActionEvent event) {
-
-    }
 
     @FXML
     void addTituloAnotacao(ActionEvent event) {
