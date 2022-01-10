@@ -13,6 +13,7 @@ public  class sceneController {
     private Scene scene;
     private Parent root;
 
+    
     public void trocarParaTelaLogin(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
         root = fxmlLoader.load();
@@ -23,6 +24,33 @@ public  class sceneController {
     }
     public void trocarParaTelaCaderno(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
+        root = fxmlLoader.load();
+        stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void trocarParaTelaAnotacoes(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAnotacoes.fxml"));
+        root = fxmlLoader.load();
+        stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void trocarParaTelaDiario(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
+        root = fxmlLoader.load();
+        stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void trocarParaTelaDiarioAnotacao(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacaoDiario.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
