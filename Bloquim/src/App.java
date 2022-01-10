@@ -20,7 +20,6 @@ public class App extends Application{
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     
-        
     }
 
 }
