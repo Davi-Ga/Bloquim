@@ -93,7 +93,7 @@ public class cadernoController {
         diario.show();
     }
     private void mostrarTelaDeAnotação() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacao.fxml"));
+        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacoes.fxml"));
         Stage anotacao = new Stage();
         anotacao.setScene(new Scene((Parent) root));
         anotacao.initStyle(StageStyle.UNDECORATED);

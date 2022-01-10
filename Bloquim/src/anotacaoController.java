@@ -1,7 +1,5 @@
-import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -9,18 +7,16 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-
 public class anotacaoController {
-   
 
     @FXML
-    private Button Anotação;
+    private Button addCadernoBtn;
 
     @FXML
-    private Button addAnotacao;
+    private Button anotacao;
 
     @FXML
-    private Text nomeCaderno;
+    private Text nomeCadernoAnotacao;
 
     @FXML
     private Button voltarBtn;
@@ -29,8 +25,7 @@ public class anotacaoController {
     private Button xBtn;
 
     @FXML
-    void AdicionaAnotacao(ActionEvent event) {
-
+    void adicionaAnotacao(ActionEvent event) {
 
     }
 
@@ -46,18 +41,16 @@ public class anotacaoController {
             System.exit(0);
         }
     }
-    
 
     @FXML
-    void verAnotação(ActionEvent event) {
+    void verAnotacao(ActionEvent event) {
 
     }
 
     @FXML
-    void voltaTela(ActionEvent event) throws IOException {
+    void voltaTela(ActionEvent event) {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
-    
     }
 
 }
