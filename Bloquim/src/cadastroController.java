@@ -8,15 +8,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import java.io.IOException;
-
 import java.sql.Connection;
-
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
 import javafx.fxml.FXMLLoader;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -124,18 +124,21 @@ public class cadastroController {
         voltaTelaLogin();
     }
 
-    private void cadastroUsuario() throws SQLException{
+    private void cadastroUsuario(){
         String nome = nomeTextBox.getText();
         String senha = senhaTextBox.getText();
         String email = emailTextBox.getText();
         usuario loginUsuario = new usuario(nome, senha, email);
 
-        
+        try{
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
         usuarioDAO.inserir(loginUsuario);
-
-        conexao.close();
+        
+        }catch(SQLException ex){
+            Logger.getLogger(cadastroController.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
     }
     
     private void voltaTelaLogin() throws IOException{
