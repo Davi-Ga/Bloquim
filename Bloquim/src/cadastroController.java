@@ -12,7 +12,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
@@ -50,6 +49,7 @@ public class cadastroController {
     @FXML
     private Button xBtn;
 
+        
     @FXML
     void confirmaSenhaUsuario(ActionEvent event) {
 
@@ -134,6 +134,13 @@ public class cadastroController {
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
         usuarioDAO.inserir(loginUsuario);
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setHeaderText("Usuario cadastrado com sucesso!");
+            alert.setContentText("Seja bem-vindo ao Bloquim, seu companheiro de anotações.");
+            if(alert.showAndWait().get() == ButtonType.OK){
+                return;
+            }
+            
         
         }catch(SQLException ex){
             Logger.getLogger(cadastroController.class.getName()).log(Level.SEVERE,null,ex);
@@ -147,6 +154,7 @@ public class cadastroController {
         voltaTelaLogin.setScene(new Scene((Parent) root));
         voltaTelaLogin.initStyle(StageStyle.UNDECORATED);
         voltaTelaLogin.showAndWait();
+        
     }
 
     

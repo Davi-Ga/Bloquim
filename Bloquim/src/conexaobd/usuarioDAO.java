@@ -22,5 +22,6 @@ public class usuarioDAO {
     }
     public void editar (usuario usuarioe) throws SQLException{
         
+        
     }
 }
