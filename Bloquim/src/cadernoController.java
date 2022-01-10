@@ -36,7 +36,7 @@ public class cadernoController {
 
     @FXML
     void irDiario(ActionEvent event) throws IOException {
-        mostrarTelaDoDiario();
+        mostrarTelaDoDiario(event);
     }
 
     @FXML
@@ -60,7 +60,7 @@ public class cadernoController {
 
     @FXML
     void vaiParaAnotacao(ActionEvent event) throws IOException {
-        mostrarTelaDeAnotação();
+        mostrarTelaDeAnotação(event);
     }
 
     @FXML
@@ -78,26 +78,26 @@ public class cadernoController {
 
 
     private void mostrarTelaDeLogin(ActionEvent event) throws IOException{
-        Stage stage = (Stage) xBtn.getScene().getWindow();
-        stage.close();
+        fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaLogin(event);
         
     }
 
-    private void mostrarTelaDoDiario() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
-        Stage diario = new Stage();
-        diario.setScene(new Scene((Parent) root));
-        diario.initStyle(StageStyle.UNDECORATED);
-        diario.show();
+    private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaDiario(event);
     }
-    private void mostrarTelaDeAnotação() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/telaAnotacoes.fxml"));
-        Stage anotacao = new Stage();
-        anotacao.setScene(new Scene((Parent) root));
-        anotacao.initStyle(StageStyle.UNDECORATED);
-        anotacao.showAndWait();
+    private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaAnotacoes(event);
+    }
+
+    private void fecharStage(){
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
     }
 
 

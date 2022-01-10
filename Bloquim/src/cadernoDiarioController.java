@@ -1,4 +1,7 @@
 
+import java.io.IOException;
+
+import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -25,13 +28,13 @@ public class cadernoDiarioController extends cadernoController {
     private Button xBtn;
 
     @FXML
-    void adicionaAnotacaoDiario(ActionEvent event) {
-        
+    void adicionaAnotacaoDiario(ActionEvent event) throws IOException {
+        novaAnotacao(event);
     }
 
     @FXML
     void fechaAba(ActionEvent event) {
-        System.exit(0);
+        fecharStage();
     }
 
     @FXML
@@ -40,9 +43,19 @@ public class cadernoDiarioController extends cadernoController {
     }
 
     @FXML
-    void voltaTela(ActionEvent event) {
+    void voltaTela(ActionEvent event) throws IOException {
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaCaderno(event);
+    }
+    public void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
     }
 
+    void novaAnotacao(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaDiarioAnotacao(event);
+    }
 }
