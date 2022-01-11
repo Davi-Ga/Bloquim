@@ -1,5 +1,11 @@
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import application.sceneController;
+import conexaobd.conexaoBancoDeDados;
+import conexaobd.usuario;
+import conexaobd.usuarioDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +23,7 @@ import javafx.scene.Scene;
 
 public class loginController {
 
-    private String nomeUsuarioStringDeComparacao = "batata";
-    private String senhaUsuarioStringDeComparacao = "batata123";
+    
   
 
     @FXML
@@ -34,29 +39,16 @@ public class loginController {
     private PasswordField senhaTextBox;
 
     @FXML
-    private TextField usuarioTextBox;
+    private TextField emailTextBox;
 
     @FXML
     private Button xBtn;
 
     @FXML
-    void entrarApp(ActionEvent event) throws IOException  {
-        if(!usuarioTextBox.getText().equals(nomeUsuarioStringDeComparacao)){
-            System.out.println("O nome de usuário digitado é inválido");
-            return;
-        }
-        else if(!senhaTextBox.getText().equals(senhaUsuarioStringDeComparacao)){
-            System.out.println("A senha digitada é inválida");
-            return;
-        }
-        else{
-            
-            sceneController sc = new sceneController();
-            Stage stage=(Stage)xBtn.getScene().getWindow();
-            stage.close();
-            sc.trocarParaTelaCaderno(event);
-        }
-            
+    void entrarApp(ActionEvent event) throws IOException, SQLException  {
+       
+        autenticar(event);
+
     }
 
     @FXML
@@ -74,7 +66,7 @@ public class loginController {
     
 
     @FXML
-    void nomeUsuario(ActionEvent event) {
+    void emailUsuario(ActionEvent event) {
 
     }
 
@@ -95,6 +87,26 @@ public class loginController {
         Scene cadastroscene = new Scene(root);
         cadastroStage.setScene(cadastroscene);
         cadastroStage.show();
+    }
+
+    public void autenticar(ActionEvent event) throws SQLException, IOException{
+
+        String email = emailTextBox.getText();
+        String senha = senhaTextBox.getText();
+
+        usuario usuarioAutenticar = new usuario(email, senha);
+
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        usuarioDAO usuarioDAO = new usuarioDAO(conexao);
+
+        boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
+
+            if(existe){
+                sceneController sc = new sceneController();
+                Stage stage=(Stage)xBtn.getScene().getWindow();
+                stage.close();
+                sc.trocarParaTelaCaderno(event);
+            }
     }
     
 
