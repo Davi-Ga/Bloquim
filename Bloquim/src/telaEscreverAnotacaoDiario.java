@@ -10,6 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class telaEscreverAnotacaoDiario {
+    @FXML
+    public void initialize() {
+        digitarAnotacao.setWrapText(true);
+    }
 
     @FXML
     private TextArea digitarAnotacao;
