@@ -71,18 +71,9 @@ public class cadernoController {
         if(alert.showAndWait().get() != ButtonType.OK){
             return;
         }
-        else{
-            mostrarTelaDeLogin(event);
-        }
-    }
-
-
-    private void mostrarTelaDeLogin(ActionEvent event) throws IOException{
-        fecharStage();
-        sceneController sc = new sceneController();
-        sc.trocarParaTelaLogin(event);
         
     }
+
 
     private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
