@@ -28,6 +28,8 @@ public class usuarioDAO {
         conexao.close(); //Corrigir, não se deve fechar aqui
 
     }
+    
+
     public void editar (usuario usuarioe) throws SQLException{
         
         

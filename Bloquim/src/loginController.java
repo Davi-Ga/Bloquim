@@ -46,8 +46,9 @@ public class loginController {
 
     @FXML
     void entrarApp(ActionEvent event) throws IOException, SQLException  {
-       
+        
         autenticar(event);
+        
 
     }
 

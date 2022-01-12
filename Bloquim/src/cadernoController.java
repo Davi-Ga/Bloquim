@@ -1,5 +1,9 @@
 import java.io.IOException;
+
+import javax.security.sasl.SaslServer;
+
 import application.sceneController;
+import conexaobd.usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +41,7 @@ public class cadernoController {
     @FXML
     void irDiario(ActionEvent event) throws IOException {
         mostrarTelaDoDiario(event);
+        
     }
 
     @FXML
