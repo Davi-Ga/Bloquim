@@ -9,6 +9,7 @@ public class usuario {
             this.nome = nome;
             this.senha = senha;
             this.email = email;
+           
         }
         public usuario(String email, String senha){
             this.senha = senha;
@@ -37,4 +38,6 @@ public class usuario {
         public void setemail(String email){
             this.email = email;
         }
+
+
 }      
