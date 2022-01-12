@@ -1,4 +1,6 @@
 package application;
+import FXMLsControllers.*;
+import conexaobd.usuario;
 
 import java.io.IOException;
 import javafx.event.ActionEvent;
@@ -21,14 +23,17 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
+        
         stage.show();
     }
-    public void trocarParaTelaCaderno(ActionEvent event) throws IOException{
+    public void trocarParaTelaCaderno(ActionEvent event,String email) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
+        cadernoController cad = fxmlLoader.<cadernoController>getController();
+        cad.initData(email);
         stage.show();
     }
 

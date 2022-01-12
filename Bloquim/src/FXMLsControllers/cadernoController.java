@@ -1,29 +1,39 @@
+package FXMLsControllers;
 
 import java.io.IOException;
 
-import javax.security.sasl.SaslServer;
+
 
 import application.sceneController;
 import conexaobd.usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.ButtonType;
-import javafx.stage.StageStyle;
+
 
 public class cadernoController {
+
+    String emailUsuario;
     @FXML
     public void initialize() throws IOException {
-       
-        
+     
        
     } 
+
+    public void initData(String email){
+        this.emailUsuario=email;
+        nomeLabelText.setText(email);
+        
+    }
+
+    @FXML
+    private Text nomeLabelText;
     @FXML
     private Button addCadernoBtn;
 

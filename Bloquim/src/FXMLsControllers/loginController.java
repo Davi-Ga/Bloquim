@@ -1,3 +1,4 @@
+package FXMLsControllers;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -117,7 +118,8 @@ public class loginController {
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
-                sc.trocarParaTelaCaderno(event);
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail());    
+
             }
     }
     
