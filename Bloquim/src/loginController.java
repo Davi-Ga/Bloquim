@@ -1,6 +1,8 @@
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import application.sceneController;
@@ -23,7 +25,7 @@ import javafx.scene.Scene;
 
 
 public class loginController {
-
+   
     
   
 
@@ -49,7 +51,6 @@ public class loginController {
     void entrarApp(ActionEvent event) throws IOException, SQLException  {
         
         autenticar(event);
-        
 
     }
 
@@ -100,10 +101,19 @@ public class loginController {
 
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
+        
 
         boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
-
+          
             if(existe){
+               String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
+                PreparedStatement stnt= conexao.prepareStatement(sql);
+                stnt.execute();
+                ResultSet resultSet = stnt.getResultSet();
+                resultSet.next();
+                String name = resultSet.getString("nome");
+                System.out.println(name);
+        
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
@@ -112,4 +122,5 @@ public class loginController {
     }
     
 
+    
 }

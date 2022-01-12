@@ -1,7 +1,7 @@
 package conexaobd;
 
 public class usuario {
-    private String nome;
+    private  String nome;
     private String senha;
     private String email;
 
@@ -38,6 +38,5 @@ public class usuario {
         public void setemail(String email){
             this.email = email;
         }
-
 
 }      

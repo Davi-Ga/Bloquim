@@ -1,5 +1,6 @@
 package conexaobd;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,5 +49,8 @@ public class usuarioDAO {
         return resultSet.next();
 
     }
+
+    
+
 
 }
