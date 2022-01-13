@@ -118,7 +118,11 @@ public class loginController {
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail());    
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),usuarioAutenticar.getnome());    
+                if(usuarioAutenticar.getnome().isEmpty() || usuarioAutenticar.getnome()==null){
+                    System.out.println("O nome é: "+usuarioAutenticar.getnome());
+                }
+                
 
             }
     }
