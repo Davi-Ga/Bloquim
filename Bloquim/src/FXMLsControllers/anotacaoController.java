@@ -1,5 +1,8 @@
 package FXMLsControllers;
 
+import java.io.IOException;
+
+import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,6 +13,14 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class anotacaoController {
+    private String nome;
+    private String email;
+    
+    @FXML
+    public void initData(String nome, String email){
+        this.nome= nome;
+        this.email=email;
+    }
 
     @FXML
     private Button addCadernoBtn;
@@ -50,9 +61,11 @@ public class anotacaoController {
     }
 
     @FXML
-    void voltaTela(ActionEvent event) {
+    void voltaTela(ActionEvent event) throws IOException {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaCaderno(event, this.email, this.nome);
     }
 
 }
