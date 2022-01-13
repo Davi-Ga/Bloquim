@@ -118,9 +118,23 @@ public class loginController {
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail());    
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),usuarioAutenticar.getnome());    
+                if(usuarioAutenticar.getnome().isEmpty() || usuarioAutenticar.getnome()==null){
+                    System.out.println("A variável 'nome' está nula!");
+                }
+                
 
             }
+            else{
+                mostrarAlertaDeUsuarioInvalido();
+            }
+    }
+
+    private void mostrarAlertaDeUsuarioInvalido() {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setHeaderText("Usuário inválido!");
+        alert.setContentText("Verifique os valores digitados, e tente novamente.");
+        alert.show();
     }
     
 

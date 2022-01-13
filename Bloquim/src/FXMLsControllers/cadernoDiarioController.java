@@ -14,6 +14,35 @@ import javafx.stage.Stage;
 
 public class cadernoDiarioController extends cadernoController {
 
+    private String email;
+    private String nome;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+
+
+
+
+    @FXML
+    public void initData(String email,String nome) {
+        setEmail(email);
+        setNome(nome);
+    }
+
     @FXML
     private Button addAnotacaoDiarioBtn;
 
@@ -48,7 +77,7 @@ public class cadernoDiarioController extends cadernoController {
     void voltaTela(ActionEvent event) throws IOException {
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,"");
+        sc.trocarParaTelaCaderno(event,null,null);
     }
     public void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();
@@ -58,6 +87,6 @@ public class cadernoDiarioController extends cadernoController {
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiarioAnotacao(event);
+        sc.trocarParaTelaDiarioAnotacao(event,getEmail(),getNome());
     }
 }
