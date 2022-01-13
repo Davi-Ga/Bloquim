@@ -42,6 +42,10 @@ public class usuarioDAO {
         return resultSet.next();
 
     }
+    public static void pegaNome(){
+
+
+    }
 
     
 

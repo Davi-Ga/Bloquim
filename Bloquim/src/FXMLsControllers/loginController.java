@@ -107,7 +107,7 @@ public class loginController {
         boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
           
             if(existe){
-               String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
+                String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
                 PreparedStatement stnt= conexao.prepareStatement(sql);
                 stnt.execute();
                 ResultSet resultSet = stnt.getResultSet();
