@@ -1,6 +1,10 @@
 package application;
+<<<<<<< HEAD
+import conexaobd.usuario;
+=======
 import FXMLsControllers.*;
 
+>>>>>>> eb41c93de0c3ada36409c6cf789f7981a899df3f
 
 import java.io.IOException;
 import javafx.event.ActionEvent;

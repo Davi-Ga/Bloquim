@@ -22,21 +22,11 @@
             <Font size="23.0" />
          </font>
       </Button>
-      <Text fx:id="erroMensagemText" fill="RED" layoutX="58.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* As senhas não correspondem" visible="false" wrappingWidth="208.0030517578125">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Text>
       <Button layoutX="613.0" layoutY="1.0" mnemonicParsing="false" onAction="#fechaAba" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: transparent;" text="X" textFill="#3f435a" fx:id="xBtn">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Text fx:id="erroMensagemEmailText" fill="RED" layoutX="58.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* E-mail inválido" visible="false" wrappingWidth="208.0030517578125">
-         <font>
-            <Font size="9.0" />
-         </font>
-      </Text>
       <Button fx:id="cadernoBD" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacao" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Banco de Dados" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
