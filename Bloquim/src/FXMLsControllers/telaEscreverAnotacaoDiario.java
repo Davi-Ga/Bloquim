@@ -12,6 +12,30 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class telaEscreverAnotacaoDiario {
+
+    private String email;
+    private String nome;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+
+
+
     @FXML
     public void initialize() {
         digitarAnotacao.setWrapText(true);
@@ -54,6 +78,9 @@ public class telaEscreverAnotacaoDiario {
     void mostrarTelaDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event);
+        sc.trocarParaTelaDiario(event,getEmail(),getNome());
+    }
+
+    public void initData(String email, String nome) {
     }
 }

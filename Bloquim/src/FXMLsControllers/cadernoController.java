@@ -5,7 +5,7 @@ import java.io.IOException;
 
 
 import application.sceneController;
-import conexaobd.usuario;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -19,18 +19,39 @@ import javafx.scene.control.ButtonType;
 
 public class cadernoController {
 
-    String emailUsuario;
+    private String email;
+    private String nome;
+
+    public void initData(String email,String nome){
+        setEmail(email);
+        setNome(nome);
+        nomeLabelText.setText(getNome());
+        
+    }
+
     @FXML
     public void initialize() throws IOException {
      
        
     } 
 
-    public void initData(String email){
-        this.emailUsuario=email;
-        nomeLabelText.setText(email);
-        
+    public String getNome() {
+        return nome;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
 
     @FXML
     private Text nomeLabelText;
@@ -94,12 +115,12 @@ public class cadernoController {
     private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event);
+        sc.trocarParaTelaDiario(event,getEmail(),getNome());
     }
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event);
+        sc.trocarParaTelaAnotacoes(event,getEmail(),getNome());
     }
 
     private void fecharStage(){
