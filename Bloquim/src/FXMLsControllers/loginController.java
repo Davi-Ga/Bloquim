@@ -1,5 +1,5 @@
 package FXMLsControllers;
-
+import validadorDeTexto.validadorDeTexto;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -118,7 +118,8 @@ public class loginController {
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),usuarioAutenticar.getnome());    
+                
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),name);    
                 if(usuarioAutenticar.getnome().isEmpty() || usuarioAutenticar.getnome()==null){
                     System.out.println("A variável 'nome' está nula!");
                 }
