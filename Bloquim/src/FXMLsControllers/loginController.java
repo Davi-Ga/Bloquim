@@ -97,31 +97,24 @@ public class loginController {
 
         String email = emailTextBox.getText();
         String senha = senhaTextBox.getText();
+    
 
         usuario usuarioAutenticar = new usuario(email, senha);
+        
 
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
         
 
         boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
-          
+        
             if(existe){
-                String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
-                PreparedStatement stnt= conexao.prepareStatement(sql);
-                stnt.execute();
-                ResultSet resultSet = stnt.getResultSet();
-                resultSet.next();
-                String name = resultSet.getString("nome");
-                System.out.println(name);
         
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),usuarioAutenticar.getnome());    
-                if(usuarioAutenticar.getnome().isEmpty() || usuarioAutenticar.getnome()==null){
-                    System.out.println("A variável 'nome' está nula!");
-                }
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),nome);    
+                
                 
 
             }
@@ -137,6 +130,7 @@ public class loginController {
         alert.show();
     }
     
-
+    
+    
     
 }

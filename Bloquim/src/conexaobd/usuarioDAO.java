@@ -37,17 +37,14 @@ public class usuarioDAO {
         stnt.execute();
         
         ResultSet resultSet = stnt.getResultSet();
+        //String nomeUser = resultSet.getString("nome"); teste fácil
+        
 
-         
         return resultSet.next();
 
     }
-    public static void pegaNome(){
+   
 
-
-    }
-
-    
 
 
 }

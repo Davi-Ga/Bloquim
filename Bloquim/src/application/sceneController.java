@@ -1,11 +1,6 @@
 package application;
-<<<<<<< HEAD
 import conexaobd.usuario;
-=======
 import FXMLsControllers.*;
-
->>>>>>> eb41c93de0c3ada36409c6cf789f7981a899df3f
-
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -58,7 +53,7 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
-        cadernoDiarioController cadDiCont = fxmlLoader.<cadernoDiarioController>getController();
+        anotacaoDiarioController cadDiCont = fxmlLoader.<anotacaoDiarioController>getController();
         cadDiCont.initData(email, nome);
         stage.show();
     }
@@ -69,7 +64,7 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
-        telaEscreverAnotacaoDiario cad = fxmlLoader.<telaEscreverAnotacaoDiario>getController();
+        escreverAnotacaoDiarioController cad = fxmlLoader.<escreverAnotacaoDiarioController>getController();
         cad.initData(email,nome);
         stage.show();
     }

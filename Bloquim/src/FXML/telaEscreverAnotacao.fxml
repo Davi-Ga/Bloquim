@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLsControllers.escreverAnotacaoController">
    <children>
       <Button fx:id="voltarBtn" mnemonicParsing="false" onAction="#voltaTela" prefHeight="47.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="&lt;" textFill="#3f435a">
          <font>
@@ -22,9 +22,9 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="tituloAnotacao" layoutX="53.0" layoutY="50.0" onAction="#addTituloAnotacao" prefHeight="25.0" prefWidth="537.0" promptText="Insira o título da anotação" style="-fx-background-color: transparent;">
+      <TextField fx:id="tituloAnotacao" layoutX="53.0" layoutY="50.0" onAction="#addTituloAnotacao" prefHeight="39.0" prefWidth="421.0" promptText="Insira o título da anotação" style="-fx-background-color: transparent;">
          <font>
-            <Font size="18.0" />
+            <Font size="17.0" />
          </font>
       </TextField>
       <Line endX="320.0" endY="-7.62939453125E-6" layoutX="154.0" layoutY="88.0" startX="-100.0" stroke="#3f435a" />
@@ -44,6 +44,6 @@
             <Font name="System Italic" size="16.0" />
          </font>
       </Button>
-      <ScrollBar layoutX="590.0" layoutY="100.0" orientation="VERTICAL" prefHeight="279.0" prefWidth="15.0" />
+      <ScrollBar fx:id="scrollBar" layoutX="590.0" layoutY="100.0" orientation="VERTICAL" prefHeight="279.0" prefWidth="15.0" />
    </children>
 </AnchorPane>
