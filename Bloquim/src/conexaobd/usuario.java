@@ -1,7 +1,7 @@
 package conexaobd;
 
 public class usuario {
-    private  String nome;
+    private String nome;
     private String senha;
     private String email;
 
@@ -16,6 +16,9 @@ public class usuario {
             this.email = email;
         } 
 
+        public usuario(String nome){
+            this.nome = nome;
+        } 
         public String getnome(){
             return nome;
         }

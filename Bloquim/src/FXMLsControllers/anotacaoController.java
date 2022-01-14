@@ -17,8 +17,6 @@ public class anotacaoController {
     private String email;
 
 
-
-
     public String getNome() {
         return nome;
     }
@@ -35,12 +33,7 @@ public class anotacaoController {
         this.email = email;
     }
 
-    
 
-
-
-
-    
     @FXML
     public void initData(String email, String nome){
         setEmail(email);

@@ -5,9 +5,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anotacaoController">
    <children>
-      <Text fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Banco de Dados">
+      <Text fx:id="nomeCadernoAnotacao" fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Banco de Dados">
          <font>
             <Font size="35.0" />
          </font>
@@ -27,12 +27,12 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="anotacaoCap1" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoCap1" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 1" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="addCadernoBtn" layoutX="538.0" layoutY="373.0" mnemonicParsing="false" onAction="#adicionaAnotacao" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
+      <Button fx:id="addAnotacaoBtn" layoutX="538.0" layoutY="373.0" mnemonicParsing="false" onAction="#adicionaAnotacao" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
          <font>
             <Font size="24.0" />
          </font>

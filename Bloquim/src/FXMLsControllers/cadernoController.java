@@ -59,7 +59,7 @@ public class cadernoController {
     private Button addCadernoBtn;
 
     @FXML
-    private Button cadernoBD;
+    private Button Anotacao1;
 
     @FXML
     private Button diarioBtn;
