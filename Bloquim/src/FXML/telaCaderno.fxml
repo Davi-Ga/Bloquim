@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLsControllers.cadernoController">
    <children>
-      <Text fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá, fulano!">
+      <Text fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olá,">
          <font>
             <Font size="35.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="Anotacao1" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacao" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Banco de Dados" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="caderno001" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Banco de Dados" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -42,5 +42,10 @@
             <Font size="13.0" />
          </font>
       </Button>
+      <Text fx:id="nomeLabelText" fill="#3f435a" layoutX="111.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
