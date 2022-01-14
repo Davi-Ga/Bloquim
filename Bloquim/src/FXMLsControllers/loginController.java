@@ -1,10 +1,11 @@
 package FXMLsControllers;
-import validadorDeTexto.validadorDeTexto;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import application.sceneController;
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
@@ -96,10 +97,10 @@ public class loginController {
 
         String email = emailTextBox.getText();
         String senha = senhaTextBox.getText();
-    
+        String nome = "a";
 
         usuario usuarioAutenticar = new usuario(email, senha);
-        
+        usuario usuarioPegaNome = new usuario(email,senha);
 
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
@@ -108,15 +109,18 @@ public class loginController {
         boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
         
             if(existe){
-        
+                nome = usuarioDAO.pegaNome(usuarioPegaNome);
+                System.out.println(nome);
+                /*String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
+                PreparedStatement stnt= conexao.prepareStatement(sql);
+                stnt.execute();
+                ResultSet resultSet = stnt.getResultSet();*/
+
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();
+                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),nome);    
                 
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),name);    
-                if(usuarioAutenticar.getnome().isEmpty() || usuarioAutenticar.getnome()==null){
-                    System.out.println("A variável 'nome' está nula!");
-                }
                 
 
             }

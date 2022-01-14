@@ -43,8 +43,20 @@ public class usuarioDAO {
         return resultSet.next();
 
     }
-   
+    public String pegaNome(usuario usuarioPegaNome) throws SQLException{
+        String sql = "SELECT nome FROM login WHERE email ='"+usuarioPegaNome.getemail()+"' AND senha = '"+usuarioPegaNome.getsenha()+"'";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+        String nomeUser = resultSet.getString("nome");
+        
+        
+        
+        return nomeUser;
+    }
 
+    
 
 
 }
