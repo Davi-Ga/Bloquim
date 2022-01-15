@@ -1,4 +1,4 @@
-package FXMLsControllers;
+package FXMLsControllers.sistemalogin.cadernos;
 
 import java.io.IOException;
 import application.sceneController;

@@ -1,6 +1,11 @@
 package application;
 import conexaobd.usuario;
 import FXMLsControllers.*;
+import FXMLsControllers.sistemalogin.cadernos.anotacaoController;
+import FXMLsControllers.sistemalogin.cadernos.anotacaoDiarioController;
+import FXMLsControllers.sistemalogin.cadernos.cadernoController;
+import FXMLsControllers.sistemalogin.cadernos.escreveranotacoes.escreverAnotacaoDiarioController;
+
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

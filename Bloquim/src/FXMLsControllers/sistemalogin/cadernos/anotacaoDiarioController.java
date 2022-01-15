@@ -1,4 +1,4 @@
-package FXMLsControllers;
+package FXMLsControllers.sistemalogin.cadernos;
 
 
 import java.io.IOException;
@@ -73,7 +73,7 @@ public class anotacaoDiarioController extends cadernoController {
     void voltaTela(ActionEvent event) throws IOException {
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,null,null);
+        sc.trocarParaTelaCaderno(event,getEmail(),getNome());
     }
     public void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();

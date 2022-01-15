@@ -1,4 +1,4 @@
-package FXMLsControllers;
+package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
