@@ -2,11 +2,9 @@ package FXMLsControllers.sistemalogin.cadernos;
 
 
 import java.io.IOException;
-
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
