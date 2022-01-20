@@ -104,13 +104,11 @@ public class loginController {
 
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
-        
-
+    
         boolean existe = usuarioDAO.usuarioExisteNoBanco(usuarioAutenticar);
         
             if(existe){
                 nome = usuarioDAO.pegaNome(usuarioPegaNome);
-                System.out.println(nome);
                 /*String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
                 PreparedStatement stnt= conexao.prepareStatement(sql);
                 stnt.execute();
@@ -121,8 +119,6 @@ public class loginController {
                 stage.close();
                 sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),nome);    
                 
-                
-
             }
             else{
                 mostrarAlertaDeUsuarioInvalido();

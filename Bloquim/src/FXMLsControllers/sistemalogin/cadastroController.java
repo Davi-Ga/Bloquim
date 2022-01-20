@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import application.sceneController;
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
@@ -122,7 +124,10 @@ public class cadastroController {
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
-        voltaTelaLogin();
+        Stage stage = (Stage)xBtn.getScene().getWindow();
+        stage.close();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaLogin(event);
     }
 
     private void cadastroUsuario(){
@@ -150,11 +155,12 @@ public class cadastroController {
     }
     
     private void voltaTelaLogin() throws IOException{
-        Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
+       /* Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Stage voltaTelaLogin = new Stage();
         voltaTelaLogin.setScene(new Scene((Parent) root));
         voltaTelaLogin.initStyle(StageStyle.UNDECORATED);
-        voltaTelaLogin.showAndWait();
+        voltaTelaLogin.showAndWait();*/
+        
         
     }
 
