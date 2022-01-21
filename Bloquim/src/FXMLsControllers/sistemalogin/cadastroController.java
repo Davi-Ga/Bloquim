@@ -108,7 +108,10 @@ public class cadastroController {
         else{
             erroMensagemText.setVisible(false);
             cadastroUsuario();
-            voltaTelaLogin();
+            Stage stage = (Stage)xBtn.getScene().getWindow();
+            stage.close();
+            sceneController sc = new sceneController();
+            sc.trocarParaTelaLogin(event);
         }
     }
 
@@ -154,15 +157,7 @@ public class cadastroController {
         
     }
     
-    private void voltaTelaLogin() throws IOException{
-       /* Object root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
-        Stage voltaTelaLogin = new Stage();
-        voltaTelaLogin.setScene(new Scene((Parent) root));
-        voltaTelaLogin.initStyle(StageStyle.UNDECORATED);
-        voltaTelaLogin.showAndWait();*/
-        
-        
-    }
+    
 
     
       
