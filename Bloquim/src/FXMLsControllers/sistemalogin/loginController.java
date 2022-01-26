@@ -108,11 +108,6 @@ public class loginController {
         
             if(existe){
                 nome = usuarioDAO.pegaNome(usuarioPegaNome);
-                /*String sql = "SELECT nome FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
-                PreparedStatement stnt= conexao.prepareStatement(sql);
-                stnt.execute();
-                ResultSet resultSet = stnt.getResultSet();*/
-
                 sceneController sc = new sceneController();
                 Stage stage=(Stage)xBtn.getScene().getWindow();
                 stage.close();

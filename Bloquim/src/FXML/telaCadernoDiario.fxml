@@ -37,7 +37,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Text fx:id="nomePessoa" fill="#3f435a" layoutX="111.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
+      <Text fx:id="nomeLabelText" fill="#3f435a" layoutX="111.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
          <font>
             <Font size="35.0" />
          </font>

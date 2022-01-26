@@ -14,6 +14,13 @@ public class anotacaoDiarioController extends cadernoController {
 
     private String email;
     private String nome;
+    
+    @FXML
+    public void initData(String email,String nome) {
+        setEmail(email);
+        setNome(nome);
+        nomeLabelText.setText(getNome());
+    }
 
     public String getEmail() {
         return email;
@@ -31,12 +38,7 @@ public class anotacaoDiarioController extends cadernoController {
         this.nome = nome;
     }
 
-    @FXML
-    public void initData(String email,String nome) {
-        setEmail(email);
-        setNome(nome);
-    }
-
+  
     @FXML
     private Button addAnotacaoDiarioBtn;
 
@@ -44,7 +46,7 @@ public class anotacaoDiarioController extends cadernoController {
     private Button anotacaoDiario;
 
     @FXML
-    private Text nomePessoa;
+    private Text nomeLabelText;
 
     @FXML
     private Button voltarBtn;
