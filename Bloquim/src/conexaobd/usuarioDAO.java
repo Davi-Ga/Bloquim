@@ -26,6 +26,7 @@ public class usuarioDAO {
         
         
     }
+    
 
 
     public boolean usuarioExisteNoBanco(usuario usuarioAutenticar) throws SQLException{

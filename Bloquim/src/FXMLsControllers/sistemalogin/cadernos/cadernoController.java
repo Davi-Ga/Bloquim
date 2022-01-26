@@ -87,6 +87,10 @@ public class cadernoController {
         }
         else{
             System.exit(0);
+            fecharStage();
+            sceneController sc = new sceneController();
+            sc.trocarParaTelaLogin(event);
+            
         }
     }
     
@@ -106,7 +110,6 @@ public class cadernoController {
         }
         
     }
-
 
     private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
