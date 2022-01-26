@@ -15,8 +15,11 @@ public class usuarioDAO {
 
     public void inserir(usuario usuariol) throws SQLException{
     
-        String sql = "INSERT INTO login(nome,senha,email) VALUES ('"+usuariol.getnome()+"','"+usuariol.getsenha()+"','"+usuariol.getemail()+"');";
+        String sql = "INSERT INTO login(nome,senha,email) VALUES (?,?,?);";
         PreparedStatement stnt = conexao.prepareStatement(sql);
+        stnt.setString(1, usuariol.getnome());
+        stnt.setString(2, usuariol.getsenha());
+        stnt.setString(3, usuariol.getemail());
         stnt.execute();
         conexao.close(); //Corrigir, não se deve fechar aqui
     }
@@ -31,20 +34,23 @@ public class usuarioDAO {
 
     public boolean usuarioExisteNoBanco(usuario usuarioAutenticar) throws SQLException{
         
-        String sql = "SELECT * FROM login WHERE email ='"+usuarioAutenticar.getemail()+"' AND senha = '"+usuarioAutenticar.getsenha()+"'";
+        String sql = "SELECT * FROM login WHERE email = ? and senha = ?";
+
         PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setString(1, usuarioAutenticar.getemail());
+        stnt.setString(2, usuarioAutenticar.getsenha());
         stnt.execute();
         
         ResultSet resultSet = stnt.getResultSet();
-        //String nomeUser = resultSet.getString("nome"); teste fácil
-        
 
         return resultSet.next();
     }
 
     public String pegaNome(usuario usuarioPegaNome) throws SQLException{
-        String sql = "SELECT nome FROM login WHERE email ='"+usuarioPegaNome.getemail()+"' AND senha = '"+usuarioPegaNome.getsenha()+"'";
+        String sql = "SELECT nome FROM login WHERE email = ? AND senha = ?";
         PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setString(1, usuarioPegaNome.getemail());
+        stnt.setString(2, usuarioPegaNome.getsenha());
         stnt.execute();
         ResultSet resultSet = stnt.getResultSet();
         resultSet.next();

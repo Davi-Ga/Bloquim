@@ -38,6 +38,9 @@ public class escreverAnotacaoDiarioController {
     @FXML
     public void initialize() {
         digitarAnotacao.setWrapText(true);
+        setEmail(email);
+        setNome(nome);
+        
     }
     @FXML
     private Button btnItalico;
