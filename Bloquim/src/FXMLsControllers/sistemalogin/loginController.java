@@ -26,9 +26,6 @@ import javafx.scene.Scene;
 
 public class loginController {
    
-    
-  
-
     @FXML
     private Button cadastreSeBtn;
 
@@ -85,11 +82,7 @@ public class loginController {
 
     @FXML
     void vaiTelaCadastro(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("/FXML/telaCadastro.fxml"));
-        Stage cadastroStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene cadastroscene = new Scene(root);
-        cadastroStage.setScene(cadastroscene);
-        cadastroStage.show();
+        mostrarTelaCadastro(event);
     }
 
     public void autenticar(ActionEvent event) throws SQLException, IOException{
@@ -108,9 +101,8 @@ public class loginController {
         
             if(existe){
                 nome = usuarioDAO.pegaNome(usuarioPegaNome);
+                fecharStage();
                 sceneController sc = new sceneController();
-                Stage stage=(Stage)xBtn.getScene().getWindow();
-                stage.close();
                 sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),nome);    
                 
             }
@@ -127,6 +119,14 @@ public class loginController {
     }
     
     
-    
-    
+    private void mostrarTelaCadastro(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarTelaCadastro(event);
+    }
+
+    private void fecharStage(){
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
+    }
 }

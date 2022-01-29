@@ -74,6 +74,7 @@ public class anotacaoDiarioController extends cadernoController {
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaCaderno(event,getEmail(),getNome());
+        System.out.println(nome);
     }
     public void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();
@@ -84,5 +85,6 @@ public class anotacaoDiarioController extends cadernoController {
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaDiarioAnotacao(event,getEmail(),getNome());
+        System.out.println(nome);
     }
 }

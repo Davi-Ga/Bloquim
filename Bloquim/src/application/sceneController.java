@@ -20,6 +20,14 @@ public  class sceneController {
     private Scene scene;
     private Parent root;
 
+    public void trocarTelaCadastro(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telacadastro.fxml"));
+        root = fxmlLoader.load();
+        stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     
     public void trocarParaTelaLogin(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
@@ -27,9 +35,9 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
-        
         stage.show();
     }
+
     public void trocarParaTelaCaderno(ActionEvent event,String email,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         root = fxmlLoader.load();

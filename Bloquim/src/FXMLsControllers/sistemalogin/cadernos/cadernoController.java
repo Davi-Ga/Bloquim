@@ -88,9 +88,7 @@ public class cadernoController {
         else{
             System.exit(0);
             fecharStage();
-            sceneController sc = new sceneController();
-            sc.trocarParaTelaLogin(event);
-            
+            mostrarTelaLogin(event);
         }
     }
     
@@ -116,11 +114,19 @@ public class cadernoController {
         sceneController sc = new sceneController();
         sc.trocarParaTelaDiario(event,getEmail(),getNome());
     }
+    
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaAnotacoes(event,getEmail(),getNome());
     }
+
+    private void mostrarTelaLogin(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaLogin(event);
+    }
+
 
     private void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();
