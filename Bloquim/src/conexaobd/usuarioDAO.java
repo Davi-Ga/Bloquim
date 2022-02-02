@@ -60,6 +60,26 @@ public class usuarioDAO {
         return nomeUser;
     }
 
+    public void buscaCadernos(usuario usuarioBuscaCadernos) throws SQLException{
+        String sql = "SELECT nome,anotaçoes FROM caderno WHERE email = ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setString(1, usuarioBuscaCadernos.getemail());
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+
+    }
+
+    public void insereCadernos(usuario usuarioInsereCadernos) throws SQLException{
+        String sql = "INSERT INTO caderno(nome,anotaçao,emailfk) SELECT l.email FROM(VALUES (?)) ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setString(1, usuarioInsereCadernos.getemail());
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+
+    }
+
     
 
 }
