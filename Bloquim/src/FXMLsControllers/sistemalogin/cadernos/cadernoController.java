@@ -25,6 +25,31 @@ public class cadernoController {
 
     protected int id;
     
+    private int paginaIndice =1;
+    private int numPaginasIndice;
+    
+
+
+    public int getNumPaginasIndice() {
+        return numPaginasIndice;
+    }
+
+    public void setNumPaginasIndice(int numPaginasIndice) {
+        this.numPaginasIndice = numPaginasIndice;
+    }
+
+    public int getPaginaIndice() {
+        return paginaIndice;
+    }
+
+    public void proximaPagina() throws SQLException{
+        if(getPaginaIndice()<getNumPaginasIndice()){
+            this.paginaIndice++;
+        }
+        loadCadernos();
+    }
+
+
 
 
     protected String nome;
@@ -33,8 +58,17 @@ public class cadernoController {
         setId(id);
         setNome(nome);
         nomeLabelText.setText(getNome());
+
+        loadCadernos();
+
+        
+        
+    }
+
+    private void loadCadernos() throws SQLException{
         List<Caderno> cadernos=  conexaobd.Query.BuscaCadernos(getId());
         
+        setNumPaginasIndice(cadernos.size());
         Button[] btnList ={
             caderno001,
             caderno002,
@@ -45,8 +79,19 @@ public class cadernoController {
             caderno007,
             caderno008
         };
+        System.out.println(cadernos.get(0).getNome());
+        for(int i=((getPaginaIndice()-1)*8);i<((getPaginaIndice())*8);i++){
+            int cadIndice=(getPaginaIndice()-1)*8+i;
+            if(cadernos.size()>cadIndice){
+                btnList[i].setText(cadernos.get(cadIndice).getNome());
+            }
+            else{
+                btnList[i].setVisible(false);
+            }
+            
+        }
 
-        btnList[0].setText("Batata é nutritivo");
+        
         
     }
 
