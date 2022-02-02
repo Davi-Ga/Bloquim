@@ -1,7 +1,5 @@
 package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
-
 import java.io.IOException;
-
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +18,7 @@ public class escreverAnotacaoDiarioController {
     private String nome;
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -28,7 +26,7 @@ public class escreverAnotacaoDiarioController {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -37,9 +35,9 @@ public class escreverAnotacaoDiarioController {
 
     @FXML
     public void initialize() {
+        
         digitarAnotacao.setWrapText(true);
-        setEmail(email);
-        setNome(nome);
+        
         
     }
     @FXML
@@ -110,6 +108,8 @@ public class escreverAnotacaoDiarioController {
         sc.trocarParaTelaDiario(event,getEmail(),getNome());
     }
 
-    public void initData(String email2, String nome2) {
+    public void initData(String email, String nome) {
+        setEmail(email);
+        setNome(nome);
     }
 }
