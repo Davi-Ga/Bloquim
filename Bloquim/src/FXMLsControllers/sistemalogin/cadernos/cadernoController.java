@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.ButtonType;
 
 
+
+
 public class cadernoController {
 
     private String email;
@@ -26,8 +28,8 @@ public class cadernoController {
 
     @FXML
     public void initialize() throws IOException {
-     
        
+       //I want to add a button in this function
     } 
 
     public String getNome() {

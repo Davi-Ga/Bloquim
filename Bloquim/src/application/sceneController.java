@@ -1,6 +1,4 @@
 package application;
-import conexaobd.usuario;
-import FXMLsControllers.*;
 import FXMLsControllers.sistemalogin.cadernos.anotacaoController;
 import FXMLsControllers.sistemalogin.cadernos.anotacaoDiarioController;
 import FXMLsControllers.sistemalogin.cadernos.cadernoController;
@@ -41,6 +39,7 @@ public  class sceneController {
     public void trocarParaTelaCaderno(ActionEvent event,String email,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         root = fxmlLoader.load();
+    
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
