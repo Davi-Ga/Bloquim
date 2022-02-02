@@ -1,6 +1,6 @@
 package application;
 import FXMLsControllers.sistemalogin.cadernos.anotacaoController;
-import FXMLsControllers.sistemalogin.cadernos.anotacaoDiarioController;
+import FXMLsControllers.sistemalogin.cadernos.diarioController;
 import FXMLsControllers.sistemalogin.cadernos.cadernoController;
 import FXMLsControllers.sistemalogin.cadernos.escreveranotacoes.escreverAnotacaoDiarioController;
 
@@ -65,7 +65,7 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
-        anotacaoDiarioController cadDiCont = fxmlLoader.<anotacaoDiarioController>getController();
+        diarioController cadDiCont = fxmlLoader.<diarioController>getController();
         cadDiCont.initData(email, nome);
         stage.show();
     }

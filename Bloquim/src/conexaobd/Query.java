@@ -7,14 +7,13 @@ import java.sql.SQLException;
 
 
 public class Query {
-    private final static Connection conexao;
+    static Connection conexao;
 
-    public Query(Connection conexao){
-        this.conexao = conexao;
-    }
-    
-    public static void BuscaCaderno(String id_usuario){
-        PreparedStatement stnt = conexao.prepareStatement(sql)
+    public static void BuscaCaderno(String id_usuario) throws SQLException{
+        conexao = conexaoBancoDeDados.getConnection();
+
+        String sql = "SELECT id_caderno,nome,anotacoes";
+        PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.execute();
     }
 
