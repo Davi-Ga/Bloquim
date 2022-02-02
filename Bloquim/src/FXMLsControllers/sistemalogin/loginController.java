@@ -89,10 +89,12 @@ public class loginController {
 
         String email = emailTextBox.getText();
         String senha = senhaTextBox.getText();
-        String nome = "a";
+        String nome;
+        Integer id;
 
         usuario usuarioAutenticar = new usuario(email, senha);
         usuario usuarioPegaNome = new usuario(email,senha);
+        usuario usuarioPegaID = new usuario(email,senha);
 
         Connection conexao = new conexaoBancoDeDados().getConnection();
         usuarioDAO usuarioDAO = new usuarioDAO(conexao);
@@ -101,10 +103,11 @@ public class loginController {
         
             if(existe){
                 nome = usuarioDAO.pegaNome(usuarioPegaNome);
+                id = usuarioDAO.pegaID(usuarioPegaID);
                 fecharStage();
                 sceneController sc = new sceneController();
-                sc.trocarParaTelaCaderno(event,usuarioAutenticar.getemail(),nome);    
-                
+                sc.trocarParaTelaCaderno(event,id,nome);    
+                System.out.println(id);
             }
             else{
                 mostrarAlertaDeUsuarioInvalido();

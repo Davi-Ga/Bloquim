@@ -12,14 +12,46 @@ import javafx.stage.Stage;
 
 public class diarioController extends cadernoController {
 
-    
-
   
     @FXML
     private Button addAnotacaoDiarioBtn;
 
     @FXML
-    private Button anotacaoDiario;
+    private Button anotacaoDiario1;
+
+    @FXML
+    private Button anotacaoDiario2;
+
+    @FXML
+    private Button anotacaoDiario3;
+
+    @FXML
+    private Button anotacaoDiario4;
+
+    @FXML
+    private Button anotacaoDiario5;
+
+    @FXML
+    private Button anotacaoDiario6;
+
+    @FXML
+    private Button anotacaoDiario7;
+
+    @FXML
+    private Button anotacaoDiario8;
+
+    @FXML
+    private Button anotacaoDiario9;
+
+    @FXML
+    private Button anotacaoDiario10;
+
+    @FXML
+    private Button anotacaoDiario11;
+
+    @FXML
+    private Button anotacaoDiario12;
+
 
     @FXML
     private Text nomeLabelText;
@@ -41,8 +73,62 @@ public class diarioController extends cadernoController {
     }
 
     @FXML
-    void vaiParaAnotacaoDiario(ActionEvent event) {
+    void vaiParaAnotacaoDiario1(ActionEvent event) {
         
+    }
+    @FXML
+    void vaiParaAnotacaoDiario2(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario3(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario4(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario5(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario6(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario7(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario8(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario9(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario10(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario11(ActionEvent event) {
+
+    }
+
+    @FXML
+    void vaiParaAnotacaoDiario12(ActionEvent event) {
+
     }
 
     @FXML
@@ -61,6 +147,5 @@ public class diarioController extends cadernoController {
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaEscreverAnotacaoDiario(event,getId(),getNome());
-        System.out.println(getNome());
     }
 }

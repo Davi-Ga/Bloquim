@@ -38,6 +38,19 @@ public class usuarioDAO {
         return resultSet.next();
     }
 
+    public Integer pegaID(usuario usuarioPegaID) throws SQLException{
+        String sql = "SELECT id_usuario FROM login WHERE email = ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setString(1, usuarioPegaID.getemail());
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+        Integer idUser = resultSet.getInt("id_usuario");
+        
+        return idUser;
+    }
+    
+
     public String pegaNome(usuario usuarioPegaNome) throws SQLException{
         String senha = criptografia.script(usuarioPegaNome.getsenha());
         String sql = "SELECT nome FROM login WHERE email = ? AND senha = ?";
