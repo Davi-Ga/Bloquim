@@ -79,7 +79,7 @@ public class cadernoController {
             caderno007,
             caderno008
         };
-        System.out.println(cadernos.get(0).getNome());
+        
         for(int i=((getPaginaIndice()-1)*8);i<((getPaginaIndice())*8);i++){
             int cadIndice=(getPaginaIndice()-1)*8+i;
             if(cadernos.size()>cadIndice){
