@@ -1,6 +1,7 @@
 package FXMLsControllers.sistemalogin.cadernos;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import application.sceneController;
 import javafx.event.ActionEvent;
@@ -138,11 +139,11 @@ public class anotacaoController {
 
 
     @FXML
-    void voltaTela(ActionEvent event) throws IOException {
+    void voltaTela(ActionEvent event) throws IOException, SQLException {
         mostrarTelaCaderno(event);
     }
 
-    private void mostrarTelaCaderno(ActionEvent event) throws IOException{
+    private void mostrarTelaCaderno(ActionEvent event) throws IOException, SQLException{
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaCaderno(event,getId(),getNome()); 

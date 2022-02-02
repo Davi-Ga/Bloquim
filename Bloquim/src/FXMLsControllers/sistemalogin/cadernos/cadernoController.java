@@ -1,7 +1,14 @@
 package FXMLsControllers.sistemalogin.cadernos;
 
+
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.sql.SQLException;
+import java.util.List;
+
+import application.Caderno;
 import application.sceneController;
+import conexaobd.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -22,10 +29,24 @@ public class cadernoController {
 
     protected String nome;
 
-    public void initData(int id,String nome){
+    public void initData(int id,String nome) throws SQLException{
         setId(id);
         setNome(nome);
         nomeLabelText.setText(getNome());
+        List<Caderno> cadernos=  conexaobd.Query.BuscaCadernos(getId());
+        
+        Button[] btnList ={
+            caderno001,
+            caderno002,
+            caderno003,
+            caderno004,
+            caderno005,
+            caderno006,
+            caderno007,
+            caderno008
+        };
+
+        btnList[0].setText("Batata é nutritivo");
         
     }
 

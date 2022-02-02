@@ -107,7 +107,7 @@ public class loginController {
                 fecharStage();
                 sceneController sc = new sceneController();
                 sc.trocarParaTelaCaderno(event,id,nome);    
-                System.out.println(id);
+                
             }
             else{
                 mostrarAlertaDeUsuarioInvalido();

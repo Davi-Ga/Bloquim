@@ -3,6 +3,8 @@ import FXMLsControllers.sistemalogin.cadernos.anotacaoController;
 import FXMLsControllers.sistemalogin.cadernos.cadernoController;
 import FXMLsControllers.sistemalogin.cadernos.escreveranotacoes.escreverAnotacaoController;
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -34,7 +36,7 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaCaderno(ActionEvent event,int id,String nome) throws IOException{
+    public void trocarParaTelaCaderno(ActionEvent event,int id,String nome) throws IOException, SQLException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         root = fxmlLoader.load();
     
