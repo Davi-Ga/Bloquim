@@ -27,6 +27,8 @@ public class cadernoController {
     
     private int paginaIndice =1;
     private int numPaginasIndice;
+
+    List<Caderno> cadernos;  
     
 
 
@@ -42,13 +44,7 @@ public class cadernoController {
         return paginaIndice;
     }
 
-    public void proximaPagina() throws SQLException{
-        if(getPaginaIndice()<getNumPaginasIndice()){
-            this.paginaIndice++;
-        }
-        loadCadernos();
-    }
-
+    
 
 
 
@@ -58,7 +54,8 @@ public class cadernoController {
         setId(id);
         setNome(nome);
         nomeLabelText.setText(getNome());
-
+        cadernos = conexaobd.Query.BuscaCadernos(getId());
+        setNumPaginasIndice((cadernos.size()/8)+1);
         loadCadernos();
 
         
@@ -66,9 +63,11 @@ public class cadernoController {
     }
 
     private void loadCadernos() throws SQLException{
-        List<Caderno> cadernos=  conexaobd.Query.BuscaCadernos(getId());
         
-        setNumPaginasIndice(cadernos.size());
+        System.out.println("página atual: "+getPaginaIndice());
+        System.out.println("Número de páginas: "+getNumPaginasIndice());
+        System.out.println("Número de cadernos: "+cadernos.size());
+        // setNumPaginasIndice(cadernos.size());
         Button[] btnList ={
             caderno001,
             caderno002,
@@ -80,17 +79,36 @@ public class cadernoController {
             caderno008
         };
         
-        for(int i=((getPaginaIndice()-1)*8);i<((getPaginaIndice())*8);i++){
+        for(int i=0;i<8;i++){
+            
             int cadIndice=(getPaginaIndice()-1)*8+i;
             if(cadernos.size()>cadIndice){
+                System.out.println("aaaaa");
+                btnList[i].setVisible(true);
                 btnList[i].setText(cadernos.get(cadIndice).getNome());
             }
             else{
+                System.out.println("bbbbb");
+                // int btnIndice=i-((getPaginaIndice()-1)*8);
                 btnList[i].setVisible(false);
             }
             
         }
 
+        if(getNumPaginasIndice()==getPaginaIndice()){
+            proxPaginaBtn.setVisible(false);
+        }
+        else{
+            proxPaginaBtn.setVisible(true);
+        }
+
+
+        if(getPaginaIndice()==1){
+            paginaAnteBtn.setVisible(false);
+        }
+        else{
+            paginaAnteBtn.setVisible(true);
+        }
         
         
     }
@@ -232,12 +250,18 @@ public class cadernoController {
     }
     
     @FXML
-    void proxPagina(ActionEvent event) {
-
+    void proxPagina(ActionEvent event) throws SQLException {
+        if((getPaginaIndice())<getNumPaginasIndice()){
+            this.paginaIndice++;
+        }
+        loadCadernos();
     }
     @FXML
-    void paginaAnterior(ActionEvent event) {
-
+    void paginaAnterior(ActionEvent event) throws SQLException {
+        if(getPaginaIndice()>1){
+            this.paginaIndice--;
+        }
+        loadCadernos();
     }
 
     @FXML
