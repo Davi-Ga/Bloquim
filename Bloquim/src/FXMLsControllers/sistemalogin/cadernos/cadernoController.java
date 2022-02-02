@@ -16,11 +16,14 @@ import javafx.scene.control.ButtonType;
 
 public class cadernoController {
 
-    private String email;
+    private int id;
+    
+
+
     private String nome;
 
-    public void initData(String email,String nome){
-        setEmail(email);
+    public void initData(int id,String nome){
+        setId(id);
         setNome(nome);
         nomeLabelText.setText(getNome());
         
@@ -40,13 +43,14 @@ public class cadernoController {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public int getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
+
 
     
 

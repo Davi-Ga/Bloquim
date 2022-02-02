@@ -36,7 +36,7 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaCaderno(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaCaderno(ActionEvent event,int id,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCaderno.fxml"));
         root = fxmlLoader.load();
     
@@ -44,7 +44,7 @@ public  class sceneController {
         scene = new Scene(root);
         stage.setScene(scene);
         cadernoController cad = fxmlLoader.<cadernoController>getController();
-        cad.initData(email,nome);
+        cad.initData(id,nome);
         stage.show();
     }
 
