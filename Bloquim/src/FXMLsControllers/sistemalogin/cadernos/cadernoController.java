@@ -93,11 +93,11 @@ public class cadernoController {
     @FXML
     private Button xBtn;
 
-    @FXML
+    /*@FXML
     void abreDiario(ActionEvent event) throws IOException {
         mostrarTelaDoDiario(event);
         
-    }
+    }*/
 
     @FXML
     void adicionaCadernoNovo(ActionEvent event) {
@@ -170,11 +170,11 @@ public class cadernoController {
         
     }
 
-    private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
+    /*private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaDiario(event,getId(),getNome());
-    }
+    }*/
     
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();

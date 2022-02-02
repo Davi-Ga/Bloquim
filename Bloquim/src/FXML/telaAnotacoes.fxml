@@ -37,37 +37,37 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao1" alignment="TOP_LEFT" layoutX="51.0" layoutY="189.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 2" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao2" alignment="TOP_LEFT" layoutX="51.0" layoutY="189.0" mnemonicParsing="false" onAction="#verAnotacao2" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 2" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao2" alignment="TOP_LEFT" layoutX="51.0" layoutY="227.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 3" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao3" alignment="TOP_LEFT" layoutX="51.0" layoutY="227.0" mnemonicParsing="false" onAction="#verAnotacao3" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 3" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao3" alignment="TOP_LEFT" layoutX="51.0" layoutY="264.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 4" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao4" alignment="TOP_LEFT" layoutX="51.0" layoutY="264.0" mnemonicParsing="false" onAction="#verAnotacao4" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 4" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao4" alignment="TOP_LEFT" layoutX="51.0" layoutY="301.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 5" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao5" alignment="TOP_LEFT" layoutX="51.0" layoutY="301.0" mnemonicParsing="false" onAction="#verAnotacao5" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 5" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao5" alignment="TOP_LEFT" layoutX="51.0" layoutY="336.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 6" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao6" alignment="TOP_LEFT" layoutX="51.0" layoutY="336.0" mnemonicParsing="false" onAction="#verAnotacao6" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 6" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao6" alignment="TOP_LEFT" layoutX="51.0" layoutY="373.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 7" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao7" alignment="TOP_LEFT" layoutX="51.0" layoutY="373.0" mnemonicParsing="false" onAction="#verAnotacao7" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 7" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao7" alignment="TOP_LEFT" layoutX="51.0" layoutY="411.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 8" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao8" alignment="TOP_LEFT" layoutX="51.0" layoutY="411.0" mnemonicParsing="false" onAction="#verAnotacao8" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 8" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>

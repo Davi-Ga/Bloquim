@@ -37,11 +37,6 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="irDiarioBtn" layoutX="559.0" layoutY="50.0" mnemonicParsing="false" onAction="#abreDiario" prefHeight="12.0" prefWidth="53.0" style="-fx-background-color: #3f435a;" text="Diário" textFill="WHITE">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
       <Text fx:id="nomeLabelText" fill="#3f435a" layoutX="111.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fulano">
          <font>
             <Font size="35.0" />

@@ -46,7 +46,29 @@ public class anotacaoController {
     private Button addCadernoBtn;
 
     @FXML
-    private Button anotacao;
+    private Button anotacao1;
+
+    @FXML
+    private Button anotacao2;
+
+    @FXML
+    private Button anotacao3;
+
+    @FXML
+    private Button anotacao4;
+
+    @FXML
+    private Button anotacao5;
+
+    @FXML
+    private Button anotacao6;
+
+    @FXML
+    private Button anotacao7;
+
+    @FXML
+    private Button anotacao8;
+
 
     @FXML
     private Text nomeCadernoAnotacao;
@@ -76,9 +98,44 @@ public class anotacaoController {
     }
 
     @FXML
-    void verAnotacao(ActionEvent event) {
+    void verAnotacao1(ActionEvent event) {
 
     }
+    @FXML
+    void verAnotacao2(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao3(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao4(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao5(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao6(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao7(ActionEvent event) {
+
+    }
+
+    @FXML
+    void verAnotacao8(ActionEvent event) {
+
+    }
+
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {

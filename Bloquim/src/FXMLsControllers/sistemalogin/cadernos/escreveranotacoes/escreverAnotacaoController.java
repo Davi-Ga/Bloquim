@@ -73,7 +73,7 @@ public class escreverAnotacaoController {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event,getId(),getNome());
+        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
     }
 
 }
