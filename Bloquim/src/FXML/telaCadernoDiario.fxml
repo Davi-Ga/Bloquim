@@ -27,12 +27,12 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="anotacaoDiario" alignment="TOP_CENTER" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação 26/11" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacaoDiario1" alignment="TOP_CENTER" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario1" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="addAnotacaoDiarioBtn" layoutX="560.0" layoutY="393.0" mnemonicParsing="false" onAction="#adicionaAnotacaoDiario" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
+      <Button fx:id="addAnotacaoDiarioBtn" layoutX="559.0" layoutY="384.0" mnemonicParsing="false" onAction="#adicionaAnotacaoDiario" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
          <font>
             <Font size="24.0" />
          </font>
@@ -42,5 +42,60 @@
             <Font size="35.0" />
          </font>
       </Text>
+      <Button fx:id="anotacaoDiario2" alignment="TOP_CENTER" layoutX="170.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario2" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação2" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario3" alignment="TOP_CENTER" layoutX="285.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario3" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação3" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario4" alignment="TOP_CENTER" layoutX="404.0" layoutY="144.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario4" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação4" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario5" alignment="TOP_CENTER" layoutX="51.0" layoutY="248.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario5" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação5" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario6" alignment="TOP_CENTER" layoutX="170.0" layoutY="248.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario6" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação6" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario7" alignment="TOP_CENTER" layoutX="285.0" layoutY="248.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario7" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação7" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario8" alignment="TOP_CENTER" layoutX="404.0" layoutY="248.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario8" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação8" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario9" alignment="TOP_CENTER" layoutX="51.0" layoutY="351.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario9" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação9" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario10" alignment="TOP_CENTER" layoutX="170.0" layoutY="351.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario10" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação10" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario11" alignment="TOP_CENTER" layoutX="285.0" layoutY="351.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario11" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação11" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacaoDiario12" alignment="TOP_CENTER" layoutX="404.0" layoutY="351.0" mnemonicParsing="false" onAction="#vaiParaAnotacaoDiario12" prefHeight="67.0" prefWidth="103.0" style="-fx-background-color: #3f435a;" text="Anotação12" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
