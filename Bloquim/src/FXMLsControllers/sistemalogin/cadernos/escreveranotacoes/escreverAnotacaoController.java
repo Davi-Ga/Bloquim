@@ -1,7 +1,6 @@
 package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
 
 import java.io.IOException;
-
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,16 +38,10 @@ public class escreverAnotacaoController {
         setNome(nome);
     }
     @FXML
-    private Button btnItalico;
-
-    @FXML
-    private Button btnNegrito;
+    private Button salvaAnotacaoBtn;
 
     @FXML
     private ScrollBar scrollBar;
-
-    @FXML
-    private Spinner<?> tamanhoFonte;
 
     @FXML
     private TextField tituloAnotacao;
@@ -70,12 +63,7 @@ public class escreverAnotacaoController {
     }
 
     @FXML
-    void textoItalico(ActionEvent event) {
-
-    }
-
-    @FXML
-    void textoNegrito(ActionEvent event) {
+    void salvaAnotacao(ActionEvent event) {
 
     }
 

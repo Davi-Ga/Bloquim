@@ -37,14 +37,8 @@ public class escreverAnotacaoDiarioController {
     public void initialize() {
         
         digitarAnotacao.setWrapText(true);
-        
-        
+     
     }
-    @FXML
-    private Button btnItalico;
-
-    @FXML
-    private Button btnNegrito;
 
     @FXML
     private TextArea digitarAnotacao;
@@ -56,7 +50,7 @@ public class escreverAnotacaoDiarioController {
     private ScrollBar scrollBar;
 
     @FXML
-    private Spinner<?> tamanhoFonte;
+    private Button salvaAnotacaoBtn;
 
     @FXML
     private TextField tituloAnotacao;
@@ -83,12 +77,7 @@ public class escreverAnotacaoDiarioController {
     }
 
     @FXML
-    void textoItalico(ActionEvent event) {
-
-    }
-
-    @FXML
-    void textoNegrito(ActionEvent event) {
+    void salvaAnotacao(ActionEvent event) {
 
     }
 
@@ -96,6 +85,8 @@ public class escreverAnotacaoDiarioController {
     void voltaTela(ActionEvent event) throws IOException {
          mostrarTelaDiario(event);
     }
+
+
 
 
     void fecharStage(){
