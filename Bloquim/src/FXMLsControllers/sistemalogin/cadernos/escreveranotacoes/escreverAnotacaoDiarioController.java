@@ -1,9 +1,5 @@
 package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
-
 import java.io.IOException;
-
-import javax.sound.sampled.SourceDataLine;
-
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
