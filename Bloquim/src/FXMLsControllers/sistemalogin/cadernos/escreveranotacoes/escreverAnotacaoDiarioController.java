@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ScrollBar;
-import javafx.scene.control.Spinner;
+
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -14,16 +14,21 @@ import javafx.stage.Stage;
 
 public class escreverAnotacaoDiarioController {
 
-    private String email;
+    private int id;
     private String nome;
 
-    public String getEmail() {
-        return this.email;
+
+    public int getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
+
+  
+
+    
 
     public String getNome() {
         return this.nome;
@@ -96,11 +101,11 @@ public class escreverAnotacaoDiarioController {
     void mostrarTelaDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event,getEmail(),getNome());
+        sc.trocarParaTelaDiario(event,getId(),getNome());
     }
 
-    public void initData(String email, String nome) {
-        setEmail(email);
+    public void initData(int id, String nome) {
+        
         setNome(nome);
     }
 }

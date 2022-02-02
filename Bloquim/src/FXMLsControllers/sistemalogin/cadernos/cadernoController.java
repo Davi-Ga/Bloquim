@@ -16,11 +16,14 @@ import javafx.scene.control.ButtonType;
 
 public class cadernoController {
 
-    private String email;
-    private String nome;
+    protected int id;
+    
 
-    public void initData(String email,String nome){
-        setEmail(email);
+
+    protected String nome;
+
+    public void initData(int id,String nome){
+        setId(id);
         setNome(nome);
         nomeLabelText.setText(getNome());
         
@@ -40,13 +43,14 @@ public class cadernoController {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public int getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
+
 
     
 
@@ -169,13 +173,13 @@ public class cadernoController {
     private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event,getEmail(),getNome());
+        sc.trocarParaTelaDiario(event,getId(),getNome());
     }
     
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getEmail(),getNome());
+        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
     }
 
     private void mostrarTelaLogin(ActionEvent event) throws IOException{

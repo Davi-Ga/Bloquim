@@ -6,13 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class escreverAnotacaoController {
 
-    private String email;
+    private int id;
+    
     private String nome;
     
     public String getNome() {
@@ -23,18 +23,19 @@ public class escreverAnotacaoController {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+
+    public int getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(int id) {
+        this.id = id;
     }
-
+   
 
     @FXML
-    public void initData(String email, String nome){
-        setEmail(email);
+    public void initData(int id, String nome){
+        setId(id);
         setNome(nome);
     }
     @FXML
@@ -72,7 +73,7 @@ public class escreverAnotacaoController {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event,getEmail(),getNome());
+        sc.trocarParaTelaDiario(event,getId(),getNome());
     }
 
 }

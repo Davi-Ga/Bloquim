@@ -14,8 +14,16 @@ import javafx.stage.Stage;
 
 public class anotacaoController {
     private String nome;
-    private String email;
+    private int id;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -25,18 +33,12 @@ public class anotacaoController {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
 
 
     @FXML
-    public void initData(String email, String nome){
-        setEmail(email);
+    public void initData(int id, String nome){
+        setId(id);
         setNome(nome);
     }
 
@@ -86,7 +88,7 @@ public class anotacaoController {
     private void mostrarTelaCaderno(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,getEmail(),getNome()); 
+        sc.trocarParaTelaCaderno(event,getId(),getNome()); 
     }
 
 
@@ -99,7 +101,7 @@ public class anotacaoController {
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaEscreverAnotacao(event,getEmail(),getNome());
+        sc.trocarParaTelaEscreverAnotacao(event,getId(),getNome());
         System.out.println(nome);
     }
 
