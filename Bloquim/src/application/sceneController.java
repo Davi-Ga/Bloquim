@@ -65,7 +65,7 @@ public  class sceneController {
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
-        anotacaoDiarioController cadDiCont = fxmlLoader.<anotacaoDiarioController>getController();
+        diarioController cadDiCont = fxmlLoader.<diarioController>getController();
         cadDiCont.initData(id, nome);
         stage.show();
     }

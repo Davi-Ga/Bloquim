@@ -8,22 +8,20 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
-import java.io.File;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFileChooser;
+
 import application.sceneController;
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 import validadorDeTexto.validadorDeTexto;
 
 

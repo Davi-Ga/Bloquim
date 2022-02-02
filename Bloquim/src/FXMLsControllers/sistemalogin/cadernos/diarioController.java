@@ -60,7 +60,7 @@ public class diarioController extends cadernoController {
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiarioAnotacao(event,getId(),getNome());
+        sc.trocarParaTelaEscreverAnotacaoDiario(event,getId(),getNome());
         System.out.println(getNome());
     }
 }

@@ -173,13 +173,13 @@ public class cadernoController {
     private void mostrarTelaDoDiario(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaDiario(event,getEmail(),getNome());
+        sc.trocarParaTelaDiario(event,getId(),getNome());
     }
     
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getEmail(),getNome());
+        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
     }
 
     private void mostrarTelaLogin(ActionEvent event) throws IOException{
