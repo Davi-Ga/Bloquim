@@ -124,6 +124,12 @@ public class cadernoController {
     private Text nomeLabelText;
 
     @FXML
+    private Button paginaAnteBtn;
+
+    @FXML
+    private Button proxPaginaBtn;
+
+    @FXML
     private Button addCadernoBtn;
 
     @FXML
@@ -222,6 +228,15 @@ public class cadernoController {
 
     @FXML
     void entraCaderno8(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void proxPagina(ActionEvent event) {
+
+    }
+    @FXML
+    void paginaAnterior(ActionEvent event) {
 
     }
 
