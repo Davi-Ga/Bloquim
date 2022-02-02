@@ -71,8 +71,19 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaDiarioAnotacao(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaEscreverAnotacaoDiario(ActionEvent event,String email,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacaoDiario.fxml"));
+        root = fxmlLoader.load();
+        stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        escreverAnotacaoDiarioController cad = fxmlLoader.<escreverAnotacaoDiarioController>getController();
+        cad.initData(email,nome);
+        stage.show();
+    }
+
+    public void trocarParaTelaEscreverAnotacao(ActionEvent event,String email,String nome) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacao.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);

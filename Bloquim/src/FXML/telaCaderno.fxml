@@ -27,12 +27,12 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="caderno001" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Banco de Dados" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="caderno001" alignment="TOP_LEFT" layoutX="58.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno1" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Button>
-      <Button fx:id="addCadernoBtn" layoutX="538.0" layoutY="373.0" mnemonicParsing="false" onAction="#adicionaCadernoNovo" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
+      <Button fx:id="addCadernoBtn" layoutX="559.0" layoutY="384.0" mnemonicParsing="false" onAction="#adicionaCadernoNovo" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
          <font>
             <Font size="24.0" />
          </font>
@@ -47,5 +47,40 @@
             <Font size="35.0" />
          </font>
       </Text>
+      <Button fx:id="caderno002" alignment="TOP_LEFT" layoutX="178.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno2" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno2" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno003" alignment="TOP_LEFT" layoutX="299.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno3" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno3" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno004" alignment="TOP_LEFT" layoutX="421.0" layoutY="144.0" mnemonicParsing="false" onAction="#entraCaderno4" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno4" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno005" alignment="TOP_LEFT" layoutX="58.0" layoutY="320.0" mnemonicParsing="false" onAction="#entraCaderno5" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno5" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno006" alignment="TOP_LEFT" layoutX="178.0" layoutY="320.0" mnemonicParsing="false" onAction="#entraCaderno6" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno6" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno007" alignment="TOP_LEFT" layoutX="299.0" layoutY="320.0" mnemonicParsing="false" onAction="#entraCaderno7" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno7" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="caderno008" alignment="TOP_LEFT" layoutX="421.0" layoutY="320.0" mnemonicParsing="false" onAction="#entraCaderno8" prefHeight="146.0" prefWidth="107.0" style="-fx-background-color: #3f435a;" text="Caderno8" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

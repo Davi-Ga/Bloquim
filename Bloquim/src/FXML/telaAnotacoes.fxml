@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLsControllers.sistemalogin.cadernos.anotacaoController">
    <children>
-      <Text fx:id="nomeCadernoAnotacao" fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Banco de Dados">
+      <Text fx:id="nomeCadernoAnotacao" fill="#3f435a" layoutX="51.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caderno1">
          <font>
             <Font size="35.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="anotacao" alignment="TOP_LEFT" layoutX="51.0" layoutY="144.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 1" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="anotacao1" alignment="TOP_LEFT" layoutX="51.0" layoutY="153.0" mnemonicParsing="false" onAction="#verAnotacao1" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 1" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -35,6 +35,41 @@
       <Button fx:id="addAnotacaoBtn" layoutX="538.0" layoutY="373.0" mnemonicParsing="false" onAction="#adicionaAnotacao" prefHeight="50.0" prefWidth="53.0" style="-fx-background-color: transparent;" text="+" textFill="#3f435a">
          <font>
             <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao1" alignment="TOP_LEFT" layoutX="51.0" layoutY="189.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 2" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao2" alignment="TOP_LEFT" layoutX="51.0" layoutY="227.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 3" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao3" alignment="TOP_LEFT" layoutX="51.0" layoutY="264.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 4" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao4" alignment="TOP_LEFT" layoutX="51.0" layoutY="301.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 5" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao5" alignment="TOP_LEFT" layoutX="51.0" layoutY="336.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 6" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao6" alignment="TOP_LEFT" layoutX="51.0" layoutY="373.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 7" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="anotacao7" alignment="TOP_LEFT" layoutX="51.0" layoutY="411.0" mnemonicParsing="false" onAction="#verAnotacao" prefHeight="27.0" prefWidth="442.0" style="-fx-background-color: #3f435a;" text="Cap 8" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
          </font>
       </Button>
    </children>

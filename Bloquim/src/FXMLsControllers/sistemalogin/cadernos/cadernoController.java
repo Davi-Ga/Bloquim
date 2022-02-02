@@ -58,6 +58,27 @@ public class cadernoController {
     private Button caderno001;
 
     @FXML
+    private Button caderno002;
+
+    @FXML
+    private Button caderno003;
+
+    @FXML
+    private Button caderno004;
+
+    @FXML
+    private Button caderno005;
+
+    @FXML
+    private Button caderno006;
+
+    @FXML
+    private Button caderno007;
+
+    @FXML
+    private Button caderno008;
+
+    @FXML
     private Button irDiarioBtn;
 
     @FXML
@@ -94,8 +115,42 @@ public class cadernoController {
     
 
     @FXML
-    void entraCaderno(ActionEvent event) throws IOException {
+    void entraCaderno1(ActionEvent event) throws IOException {
         mostrarTelaDeAnotação(event);
+    }
+    @FXML
+    void entraCaderno2(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno3(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno4(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno5(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno6(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno7(ActionEvent event) {
+
+    }
+
+    @FXML
+    void entraCaderno8(ActionEvent event) {
+
     }
 
     @FXML
@@ -135,6 +190,3 @@ public class cadernoController {
 
 
 }
-    
-
-

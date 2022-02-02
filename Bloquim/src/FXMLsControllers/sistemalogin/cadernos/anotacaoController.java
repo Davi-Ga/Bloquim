@@ -80,10 +80,27 @@ public class anotacaoController {
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException {
+        mostrarTelaCaderno(event);
+    }
+
+    private void mostrarTelaCaderno(ActionEvent event) throws IOException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaCaderno(event,getEmail(),getNome()); 
+    }
+
+
+    private void fecharStage(){
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
+    }
+
+    
+    void novaAnotacao(ActionEvent event) throws IOException{
+        fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,getEmail(),getNome());
+        sc.trocarParaTelaEscreverAnotacao(event,getEmail(),getNome());
+        System.out.println(nome);
     }
 
 }
