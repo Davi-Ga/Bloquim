@@ -23,14 +23,6 @@ public class usuarioDAO {
         stnt.execute();
         conexao.close(); //Corrigir, não se deve fechar aqui
     }
-    
-
-    public void editar (usuario usuarioe) throws SQLException{
-        
-        
-    }
-    
-
 
     public boolean usuarioExisteNoBanco(usuario usuarioAutenticar) throws SQLException{
         String senha = criptografia.script(usuarioAutenticar.getsenha());
@@ -61,13 +53,12 @@ public class usuarioDAO {
     }
 
     public void buscaCadernos(usuario usuarioBuscaCadernos) throws SQLException{
-        String sql = "SELECT nome,anotaçoes FROM caderno WHERE email = ?";
+        String sql = "SELECT * FROM caderno WHERE id = ?";
         PreparedStatement stnt= conexao.prepareStatement(sql);
         stnt.setString(1, usuarioBuscaCadernos.getemail());
         stnt.execute();
         ResultSet resultSet = stnt.getResultSet();
         resultSet.next();
-
     }
 
     public void insereCadernos(usuario usuarioInsereCadernos) throws SQLException{

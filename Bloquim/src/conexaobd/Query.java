@@ -6,21 +6,14 @@ import java.sql.SQLException;
 
 
 public class Query {
-    private final Connection conexao;
+    static Connection conexao;
 
-    public Query(String queryText) throws SQLException{
-        this.conexao = conexaoBancoDeDados.getConnection();
-        try{
-            
-            PreparedStatement stnt = this.conexao.prepareStatement(queryText);
-            stnt.execute();
-            this.conexao.close();
-        }
-        catch(Exception e){
-            System.out.println(e.toString());
-        }
-        
+    public static void BuscaCaderno(String id_usuario) throws SQLException{
+        conexao = conexaoBancoDeDados.getConnection();
 
+        String sql = "SELECT id_caderno,nome,anotacoes";
+        PreparedStatement stnt = conexao.prepareStatement(sql);
+        stnt.execute();
     }
 
 }

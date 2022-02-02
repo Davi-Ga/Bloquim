@@ -10,7 +10,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-public class anotacaoDiarioController extends cadernoController {
+public class diarioController extends cadernoController {
 
     
 

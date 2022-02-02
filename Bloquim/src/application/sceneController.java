@@ -1,6 +1,6 @@
 package application;
 import FXMLsControllers.sistemalogin.cadernos.anotacaoController;
-import FXMLsControllers.sistemalogin.cadernos.anotacaoDiarioController;
+import FXMLsControllers.sistemalogin.cadernos.diarioController;
 import FXMLsControllers.sistemalogin.cadernos.cadernoController;
 import FXMLsControllers.sistemalogin.cadernos.escreveranotacoes.escreverAnotacaoDiarioController;
 
