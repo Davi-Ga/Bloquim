@@ -48,14 +48,14 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaAnotacoes(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaAnotacoes(ActionEvent event,int id,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAnotacoes.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         anotacaoController anot = fxmlLoader.<anotacaoController>getController();
-        anot.initData(email,nome);
+        anot.initData(id,nome);
         stage.show();
     }
     

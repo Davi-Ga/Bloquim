@@ -14,8 +14,16 @@ import javafx.stage.Stage;
 
 public class anotacaoController {
     private String nome;
-    private String email;
+    private int id;
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -25,18 +33,12 @@ public class anotacaoController {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
 
 
     @FXML
-    public void initData(String email, String nome){
-        setEmail(email);
+    public void initData(int id, String nome){
+        setId(id);
         setNome(nome);
     }
 
