@@ -16,11 +16,11 @@ import javafx.scene.control.ButtonType;
 
 public class cadernoController {
 
-    private int id;
+    protected int id;
     
 
 
-    private String nome;
+    protected String nome;
 
     public void initData(int id,String nome){
         setId(id);

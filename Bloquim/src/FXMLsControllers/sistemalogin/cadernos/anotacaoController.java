@@ -88,7 +88,7 @@ public class anotacaoController {
     private void mostrarTelaCaderno(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,getEmail(),getNome()); 
+        sc.trocarParaTelaCaderno(event,getId(),getNome()); 
     }
 
 
@@ -101,7 +101,7 @@ public class anotacaoController {
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaEscreverAnotacao(event,getEmail(),getNome());
+        sc.trocarParaTelaEscreverAnotacao(event,getId(),getNome());
         System.out.println(nome);
     }
 

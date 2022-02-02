@@ -59,36 +59,36 @@ public  class sceneController {
         stage.show();
     }
     
-    public void trocarParaTelaDiario(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaDiario(ActionEvent event,int id,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaCadernoDiario.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         anotacaoDiarioController cadDiCont = fxmlLoader.<anotacaoDiarioController>getController();
-        cadDiCont.initData(email, nome);
+        cadDiCont.initData(id, nome);
         stage.show();
     }
 
-    public void trocarParaTelaEscreverAnotacaoDiario(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaEscreverAnotacaoDiario(ActionEvent event,int id,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacaoDiario.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         escreverAnotacaoDiarioController cad = fxmlLoader.<escreverAnotacaoDiarioController>getController();
-        cad.initData(email,nome);
+        cad.initData(id,nome);
         stage.show();
     }
 
-    public void trocarParaTelaEscreverAnotacao(ActionEvent event,String email,String nome) throws IOException{
+    public void trocarParaTelaEscreverAnotacao(ActionEvent event,int id,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacao.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         escreverAnotacaoDiarioController cad = fxmlLoader.<escreverAnotacaoDiarioController>getController();
-        cad.initData(email,nome);
+        cad.initData(id,nome);
         stage.show();
     }
 }
