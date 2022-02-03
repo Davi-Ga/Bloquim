@@ -48,7 +48,6 @@ public class cadernoController {
     public void setId(int id) {
         this.id = id;
     }
-    
 
     public int getNumPaginasIndice() {
         return numPaginasIndice;
@@ -62,11 +61,6 @@ public class cadernoController {
         return paginaIndice;
     }
 
-    
-
-
-
-
     public void initData(int id,String nome) throws SQLException{
         setId(id);
         setNome(nome);
@@ -74,9 +68,7 @@ public class cadernoController {
         cadernos = conexaobd.Query.BuscaCadernos(getId());
         setNumPaginasIndice((cadernos.size()/8)+1);
         loadCadernos();
-
-        
-        
+ 
     }
 
     private void loadCadernos() throws SQLException{
@@ -96,19 +88,18 @@ public class cadernoController {
             caderno008
         };
         
-        for(int i=0;i<8;i++){
-            
-            int cadIndice=(getPaginaIndice()-1)*8+i;
-            if(cadernos.size()>cadIndice){
-                btnList[i].setVisible(true);
-                btnList[i].setText(cadernos.get(cadIndice).getNome());
-            }
-            else{
+            for(int i=0;i<8;i++){
                 
-                btnList[i].setVisible(false);
+                int cadIndice=(getPaginaIndice()-1)*8+i;
+                if(cadernos.size()>cadIndice){
+                    btnList[i].setVisible(true);
+                    btnList[i].setText(cadernos.get(cadIndice).getNome());
+                }
+                else{
+                    
+                    btnList[i].setVisible(false);
+                }
             }
-            
-        }
 
         if(getNumPaginasIndice()==getPaginaIndice()){
             proxPaginaBtn.setVisible(false);
@@ -117,15 +108,13 @@ public class cadernoController {
             proxPaginaBtn.setVisible(true);
         }
 
-
         if(getPaginaIndice()==1){
             paginaAnteBtn.setVisible(false);
         }
         else{
             paginaAnteBtn.setVisible(true);
         }
-        
-        
+            
     }
 
     @FXML
@@ -134,10 +123,6 @@ public class cadernoController {
        //I want to add a button in this function
     } 
 
-    
-
-
-    
 
     @FXML
     private Text nomeLabelText;
@@ -222,8 +207,11 @@ public class cadernoController {
     
 
     @FXML
-    void entraCaderno1(ActionEvent event) throws IOException {
-        mostrarTelaDeAnotação(event);
+    void entraCaderno1(ActionEvent event) throws IOException, SQLException {
+        
+        id = Query.pegaIDCaderno(getId());
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaAnotacoes(event,id,getNome());
     }
     @FXML
     void entraCaderno2(ActionEvent event) {
@@ -276,12 +264,13 @@ public class cadernoController {
     }
 
     @FXML
-    void voltaTela(ActionEvent event) throws IOException {
+    void voltaTela(ActionEvent event) throws IOException, SQLException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText("Quer mesmo voltar à tela de Login?");
         alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff.");
         if(alert.showAndWait().get() == ButtonType.OK){
             mostrarTelaLogin(event);
+            Query.fecharConexão();
         }
         
     }
@@ -293,7 +282,7 @@ public class cadernoController {
     }*/
     
     
-    private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
+    private void mostrarTelaDeAnotação(ActionEvent event) throws IOException, SQLException{
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaAnotacoes(event,getId(),getNome());

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import application.sceneController;
+import conexaobd.Query;
 import conexaobd.conexaoBancoDeDados;
 import conexaobd.usuario;
 import conexaobd.usuarioDAO;
@@ -52,7 +53,7 @@ public class loginController {
     }
 
     @FXML
-    void fechaAba(ActionEvent event) {
+    void fechaAba(ActionEvent event) throws SQLException {
         Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
         alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
         alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");

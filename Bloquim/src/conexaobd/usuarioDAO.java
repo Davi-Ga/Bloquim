@@ -47,6 +47,7 @@ public class usuarioDAO {
         resultSet.next();
         Integer idUser = resultSet.getInt("id_usuario");
         
+
         return idUser;
     }
     
@@ -62,6 +63,7 @@ public class usuarioDAO {
         resultSet.next();
         String nomeUser = resultSet.getString("nome");
         
+
         return nomeUser;
     }
 
