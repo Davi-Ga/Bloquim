@@ -105,7 +105,7 @@ public class escreverAnotacaoController {
     void salvaAnotacao(ActionEvent event) throws SQLException, IOException {
         String titulo = tituloAnotacao.getText();
         String conteudo = conteudoText.getText();
-        conexaobd.Query.insereAnotacao(titulo, conteudo,getId());
+        conexaobd.Query.insereAnotacao(titulo,conteudo,getId());
         fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaAnotacoes(event,getId(),getId_usuario(),getNome());
