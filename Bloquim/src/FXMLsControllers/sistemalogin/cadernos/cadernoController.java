@@ -292,6 +292,7 @@ public class cadernoController {
         sc.trocarParaTelaDiario(event,getId(),getNome());
     }*/
     
+    
     private void mostrarTelaDeAnotação(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
