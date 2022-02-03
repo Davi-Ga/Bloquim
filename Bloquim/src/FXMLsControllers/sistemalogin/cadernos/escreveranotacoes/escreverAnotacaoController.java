@@ -4,16 +4,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import javafx.scene.control.TextArea;
 import application.sceneController;
-import conexaobd.conexaoBancoDeDados;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class escreverAnotacaoController {
 
@@ -87,17 +86,25 @@ public class escreverAnotacaoController {
     }
 
     @FXML
-    void fechaAba(ActionEvent event) {
-
-        
-        System.exit(0);
+    void fechaAba(ActionEvent event) throws IOException {
+        Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
+        alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
+        alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
+        if(alertaFecharApp.showAndWait().get() != ButtonType.OK){
+            return;
+        }
+        else{
+            System.exit(0);
+            fecharStage();
+            sceneController sc = new sceneController();
+            sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome());
+        }
     }
 
     @FXML
     void salvaAnotacao(ActionEvent event) throws SQLException, IOException {
         String titulo = tituloAnotacao.getText();
         String conteudo = conteudoText.getText();
-        //aaaaaaaaaaaaaaaaa
         conexaobd.Query.insereAnotacao(titulo, conteudo,getId());
         fecharStage();
         sceneController sc = new sceneController();
