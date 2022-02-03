@@ -58,10 +58,11 @@ public class escreverAnotacaoController {
    
 
     @FXML
-    public void initData(int id,int id_usuario, String nome){
+    public void initData(int id,int id_usuario, String nome, String conteudo) throws SQLException{
         setId(id);
         setNome(nome);
         setId_usuario(id_usuario);
+        setConteudo(conteudo);
     }
     @FXML
     private Button salvaAnotacaoBtn;
@@ -87,7 +88,7 @@ public class escreverAnotacaoController {
     }
 
     @FXML
-    void fechaAba(ActionEvent event) throws IOException {
+    void fechaAba(ActionEvent event) throws IOException, SQLException {
         Alert alertaFecharApp = new Alert(AlertType.CONFIRMATION);
         alertaFecharApp.setHeaderText("Quer mesmo fechar o aplicativo?");
         alertaFecharApp.setContentText("Bloquim sentirá a sua falta.");
@@ -98,7 +99,7 @@ public class escreverAnotacaoController {
             System.exit(0);
             fecharStage();
             sceneController sc = new sceneController();
-            sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome());
+            sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome(),getConteudo());
         }
     }
 

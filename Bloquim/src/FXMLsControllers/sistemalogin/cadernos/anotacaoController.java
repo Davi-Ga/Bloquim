@@ -19,6 +19,7 @@ public class anotacaoController {
     private String nome;
     private int id;
     private int id_usuario;
+    private String conteudo;
 
     public int getId_usuario() {
         return id_usuario;
@@ -44,7 +45,13 @@ public class anotacaoController {
         this.id = id;
     }
 
+    public String getConteudo() {
+        return conteudo;
+    }
 
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
+    }
 
 
     private int paginaIndice =1;
@@ -169,7 +176,7 @@ public class anotacaoController {
     private Button xBtn;
 
     @FXML
-    void adicionaAnotacao(ActionEvent event) throws IOException {
+    void adicionaAnotacao(ActionEvent event) throws IOException, SQLException {
         novaAnotacao(event);
     }
 
@@ -187,42 +194,44 @@ public class anotacaoController {
     }
 
     @FXML
-    void verAnotacao1(ActionEvent event) {
+    void verAnotacao1(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,1);
+        
 
     }
     @FXML
-    void verAnotacao2(ActionEvent event) {
-
+    void verAnotacao2(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,2);
     }
 
     @FXML
-    void verAnotacao3(ActionEvent event) {
-
+    void verAnotacao3(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,3);
     }
 
     @FXML
-    void verAnotacao4(ActionEvent event) {
-
+    void verAnotacao4(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,4);
     }
 
     @FXML
-    void verAnotacao5(ActionEvent event) {
-
+    void verAnotacao5(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,5);
     }
 
     @FXML
-    void verAnotacao6(ActionEvent event) {
-
+    void verAnotacao6(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,6);
     }
 
     @FXML
-    void verAnotacao7(ActionEvent event) {
-
+    void verAnotacao7(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,7);
     }
 
     @FXML
-    void verAnotacao8(ActionEvent event) {
-
+    void verAnotacao8(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event,8);
     }
 
     @FXML
@@ -258,11 +267,17 @@ public class anotacaoController {
         stage.close();
     }
  
-    void novaAnotacao(ActionEvent event) throws IOException{
+    void novaAnotacao(ActionEvent event) throws IOException, SQLException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome());
+        sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome(),getConteudo());
         System.out.println(nome);
     }
 
+    private void mostrarTelaDeAnotação(ActionEvent event,int numBtn) throws IOException, SQLException{
+        fecharStage();
+        int cadId = ((getPaginaIndice()-1)*8)+numBtn;
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaEscreverAnotacao(event,cadId,getId(),getNome(),getConteudo());
+    }
 }

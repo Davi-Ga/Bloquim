@@ -92,6 +92,32 @@ public class Query {
         return anotList;
     }
 
+    public static String pegaConteudoAnot(Integer idAnotacao) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "SELECT conteudo FROM anotacoes WHERE id_anotacoes = ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setInt(1, idAnotacao);
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+        String conteudo = resultSet.getString("conteudo");
+
+        return conteudo;
+    }
+
+    public static String pegaNomeAnot(Integer idAnotacao) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "SELECT nome FROM anotacoes WHERE id_anotacoes = ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setInt(1, idAnotacao);
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+        String nome = resultSet.getString("nome");
+
+        return nome;
+    }
+
     public static void insereAnotacao(String nomeAnotacao,String conteudo, Integer id_caderno) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
         String sql = "SELECT (nome,conteudo,id_cadernofk) FROM anotacoes WHERE nome = ? AND conteudo = ? AND id_cadernofk = ?";
