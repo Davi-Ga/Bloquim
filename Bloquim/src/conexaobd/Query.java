@@ -45,7 +45,7 @@ public class Query {
     }
     public static void insereCadernos(String nomeCaderno, Integer id_usuario) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
-        String sql = "INSERT INTO cadernos(nome,id_usuariofk) VALUES = (?,?)";
+        String sql = "INSERT INTO caderno(nome,id_usuariofk) VALUES (?,?)";
         PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.setString(1, nomeCaderno);
         stnt.setInt(2, id_usuario);
