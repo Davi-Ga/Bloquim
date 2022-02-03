@@ -83,13 +83,11 @@ public class cadernoController {
             
             int cadIndice=(getPaginaIndice()-1)*8+i;
             if(cadernos.size()>cadIndice){
-                System.out.println("aaaaa");
                 btnList[i].setVisible(true);
                 btnList[i].setText(cadernos.get(cadIndice).getNome());
             }
             else{
-                System.out.println("bbbbb");
-                // int btnIndice=i-((getPaginaIndice()-1)*8);
+                
                 btnList[i].setVisible(false);
             }
             
