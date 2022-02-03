@@ -14,7 +14,14 @@ import javafx.stage.Stage;
 public class escreverAnotacaoController {
 
     private int id;
-    
+    private int id_usuario;
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
     private String nome;
     
     public String getNome() {
@@ -36,9 +43,10 @@ public class escreverAnotacaoController {
    
 
     @FXML
-    public void initData(int id, String nome){
+    public void initData(int id,int id_usuario, String nome){
         setId(id);
         setNome(nome);
+        setId_usuario(id_usuario);
     }
     @FXML
     private Button salvaAnotacaoBtn;
@@ -75,7 +83,7 @@ public class escreverAnotacaoController {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
+        sc.trocarParaTelaAnotacoes(event,getId(),getId_usuario(),getNome());
     }
 
 }
