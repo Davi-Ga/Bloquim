@@ -201,6 +201,7 @@ public class cadernoController {
         addCad.initData(getId()); 
         stage.showAndWait();
         cadernos = conexaobd.Query.BuscaCadernos(getId());
+        setNumPaginasIndice((cadernos.size()/8)+1);
         loadCadernos();
     }
 
