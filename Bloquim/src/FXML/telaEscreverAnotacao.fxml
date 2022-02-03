@@ -27,7 +27,7 @@
          </font>
       </TextField>
       <Line endX="320.0" endY="-7.62939453125E-6" layoutX="154.0" layoutY="88.0" startX="-100.0" stroke="#3f435a" />
-      <TextArea layoutX="53.0" layoutY="100.0" prefHeight="279.0" prefWidth="537.0">
+      <TextArea fx:id="conteudoText" layoutX="53.0" layoutY="100.0" prefHeight="279.0" prefWidth="537.0">
          <effect>
             <Glow />
          </effect>

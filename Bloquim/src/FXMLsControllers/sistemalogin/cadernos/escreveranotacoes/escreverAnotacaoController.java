@@ -2,8 +2,9 @@ package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
 
 import java.io.IOException;
 import java.sql.SQLException;
-
+import javafx.scene.control.TextArea;
 import application.sceneController;
+import conexaobd.conexaoBancoDeDados;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,6 +16,9 @@ public class escreverAnotacaoController {
 
     private int id;
     private int id_usuario;
+    private String nome;
+    private String conteudo;
+
     public int getId_usuario() {
         return id_usuario;
     }
@@ -22,7 +26,7 @@ public class escreverAnotacaoController {
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
     }
-    private String nome;
+    
     
     public String getNome() {
         return nome;
@@ -39,6 +43,14 @@ public class escreverAnotacaoController {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
    
 
@@ -58,6 +70,9 @@ public class escreverAnotacaoController {
     private TextField tituloAnotacao;
 
     @FXML
+    private TextArea conteudoText;
+
+    @FXML
     private Button voltarBtn;
 
     @FXML
@@ -74,17 +89,26 @@ public class escreverAnotacaoController {
     }
 
     @FXML
-    void salvaAnotacao(ActionEvent event) {
+    void salvaAnotacao(ActionEvent event) throws SQLException, IOException {
+        String titulo = tituloAnotacao.getText();
+        String conteudo = conteudoText.getText();
 
-    }
-
-    @FXML
-    void voltaTela(ActionEvent event) throws IOException, SQLException {
-        Stage stage = (Stage) xBtn.getScene().getWindow();
-        stage.close();
+        conexaobd.Query.insereAnotacao(titulo, conteudo,getId());
+        fecharStage();
         sceneController sc = new sceneController();
         sc.trocarParaTelaAnotacoes(event,getId(),getId_usuario(),getNome());
     }
 
-}
+    @FXML
+    void voltaTela(ActionEvent event) throws IOException, SQLException {
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaAnotacoes(event,getId(),getId_usuario(),getNome());
+    }
 
+    private void fecharStage(){
+        Stage stage = (Stage) xBtn.getScene().getWindow();
+        stage.close();
+    }
+
+}
