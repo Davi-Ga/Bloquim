@@ -1,6 +1,8 @@
 package FXMLsControllers.sistemalogin.cadernos.escreveranotacoes;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -69,7 +71,7 @@ public class escreverAnotacaoController {
     }
 
     @FXML
-    void voltaTela(ActionEvent event) throws IOException {
+    void voltaTela(ActionEvent event) throws IOException, SQLException {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
         sceneController sc = new sceneController();

@@ -57,7 +57,7 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaAnotacoes(ActionEvent event,int id,String nome) throws IOException{
+    public void trocarParaTelaAnotacoes(ActionEvent event,int id,String nome) throws IOException, SQLException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAnotacoes.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());

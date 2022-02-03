@@ -1,5 +1,6 @@
 package conexaobd;
 
+import application.Anotacoes;
 import application.Caderno;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,8 +56,14 @@ public class Query {
         conexao.close();
     }
 
+    public static void fecharConexão() throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        conexao.close();
+    }
 
-    public static String BuscaAnotações(Integer id_caderno) throws SQLException{
+
+    public static List<Anotacoes> BuscaAnotações(Integer id_caderno) throws SQLException{
+        List<Anotacoes> anotList = new ArrayList<Anotacoes>();
         Connection conexao = new conexaoBancoDeDados().getConnection();
         String sql = "SELECT id_anotacoes,nome,conteúdo,id_cadernofk FROM anotacoes WHERE id_cadernofk = ?";
         PreparedStatement stnt = conexao.prepareStatement(sql);
@@ -67,12 +74,48 @@ public class Query {
         
         while(resultSet.next()){
 
+            //pegar os dados do registro (por coluna)
+            int id_anotacoes = Integer.parseInt(resultSet.getObject(1).toString()) ;
+            // System.out.println(id_caderno);
+            String nomeAnotacoes = resultSet.getObject(2).toString();
+            String conteudo = resultSet.getObject(3).toString();
+            int id_cadernofk = Integer.parseInt(resultSet.getObject(4).toString());
 
-
-
-
+            
+            //cria objeto do tipo caderno
+            Anotacoes anot = new Anotacoes(id_anotacoes, nomeAnotacoes,conteudo ,id_cadernofk);
+            //adiciona objeto caderno à lista
+            anotList.add(anot);
 
         }
-        return sql;
+        return anotList;
     }
+
+    public static void insereAnotacao(String nomeAnotacao,String conteudo, Integer id_caderno) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+        PreparedStatement stnt = conexao.prepareStatement(sql);
+        stnt.setString(1, nomeAnotacao);
+        stnt.setString(2, conteudo);
+        stnt.setInt(3, id_caderno);
+        // stnt.executeQuery();
+        //executa
+        stnt.execute();
+        conexao.close();
+    }
+
+    public Integer pegaIDCaderno(Integer id_usuariofk) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "SELECT id_caderno FROM caderno WHERE id_usuariofk = ?";
+        PreparedStatement stnt= conexao.prepareStatement(sql);
+        stnt.setInt(1, id_usuariofk);
+        stnt.execute();
+        ResultSet resultSet = stnt.getResultSet();
+        resultSet.next();
+        Integer idCaderno = resultSet.getInt("id_caderno");
+        conexao.close();
+        
+        return idCaderno;
+    }
+    
 }

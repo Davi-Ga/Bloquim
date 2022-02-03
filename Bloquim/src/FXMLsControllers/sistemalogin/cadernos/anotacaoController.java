@@ -2,7 +2,9 @@ package FXMLsControllers.sistemalogin.cadernos;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
+import application.Anotacoes;
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +19,10 @@ public class anotacaoController {
     private String nome;
     private int id;
 
+    private int paginaIndice =1;
+    private int numPaginasIndice;
+    
+    List<Anotacoes> anotacoes; 
 
     public int getId() {
         return id;
@@ -33,15 +39,76 @@ public class anotacaoController {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    public int getNumPaginasIndice() {
+        return numPaginasIndice;
+    }
 
+    public void setNumPaginasIndice(int numPaginasIndice) {
+        this.numPaginasIndice = numPaginasIndice;
+    }
+
+    public int getPaginaIndice() {
+        return paginaIndice;
+    }
     
 
 
     @FXML
-    public void initData(int id, String nome){
+    public void initData(int id, String nome) throws SQLException{
         setId(id);
         setNome(nome);
+        nomeCadernoAnotacao.setText(getNome());
+        anotacoes = conexaobd.Query.BuscaAnotações(getId());
+        setNumPaginasIndice((anotacoes.size()/8)+1);
+        loadAnotacoes();
     }
+    private void loadAnotacoes() throws SQLException{
+        
+        System.out.println("página atual: "+getPaginaIndice());
+        System.out.println("Número de páginas: "+getNumPaginasIndice());
+        System.out.println("Número de cadernos: "+anotacoes.size());
+        // setNumPaginasIndice(cadernos.size());
+        Button[] btnList ={
+            anotacao1,
+            anotacao2,
+            anotacao3,
+            anotacao4,
+            anotacao5,
+            anotacao6,
+            anotacao7,
+            anotacao8
+        };
+
+            for(int i=0;i<8;i++){
+                
+                int anotIndice=(getPaginaIndice()-1)*8+i;
+                if(anotacoes.size()>anotIndice){
+                    btnList[i].setVisible(true);
+                    btnList[i].setText(anotacoes.get(anotIndice).getNome());
+                }
+                else{
+                    
+                    btnList[i].setVisible(false);
+                }
+            }
+        if(getNumPaginasIndice()==getPaginaIndice()){
+            proxPaginaBtn.setVisible(false);
+        }
+        else{
+            proxPaginaBtn.setVisible(true);
+        }
+
+        if(getPaginaIndice()==1){
+            paginaAnteBtn.setVisible(false);
+        }
+        else{
+            paginaAnteBtn.setVisible(true);
+        }
+                
+    }
+    
+    
+    
 
     @FXML
     private Button addCadernoBtn;
@@ -70,6 +137,11 @@ public class anotacaoController {
     @FXML
     private Button anotacao8;
 
+    @FXML
+    private Button paginaAnteBtn;
+
+    @FXML
+    private Button proxPaginaBtn;
 
     @FXML
     private Text nomeCadernoAnotacao;
@@ -136,6 +208,21 @@ public class anotacaoController {
     void verAnotacao8(ActionEvent event) {
 
     }
+    @FXML
+    void paginaAnterior(ActionEvent event) throws SQLException {
+        if(getPaginaIndice()>1){
+            this.paginaIndice--;
+        }
+        loadAnotacoes();
+    }
+    
+    void proxPagina(ActionEvent event) throws SQLException {
+        if((getPaginaIndice())<getNumPaginasIndice()){
+            this.paginaIndice++;
+        }
+        loadAnotacoes();
+    }
+    
 
 
     @FXML
