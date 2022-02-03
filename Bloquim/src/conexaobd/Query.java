@@ -52,6 +52,7 @@ public class Query {
         // stnt.executeQuery();
         //executa
         stnt.execute();
+        conexao.close();
     }
 
 
