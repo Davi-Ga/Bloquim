@@ -47,6 +47,7 @@ public class telaAddCaderno {
     void criaCaderno(ActionEvent event) throws SQLException {
         String nome = nomeCadernoText.getText();
         conexaobd.Query.insereCadernos(nome, getId());
+        fecharStage();
     }
 
     private void fecharStage(){
