@@ -94,7 +94,7 @@ public class Query {
 
     public static void insereAnotacao(String nomeAnotacao,String conteudo, Integer id_caderno) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
-        String sql = "INSERT INTO anotacoes(nome,id_caderno) VALUES (?,?)";
+        String sql = "INSERT INTO anotacoes(nome,id_cadernofk) VALUES (?,?)";
         PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.setString(1, nomeAnotacao);
         stnt.setInt(2, id_caderno);
