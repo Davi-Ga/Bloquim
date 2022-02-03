@@ -100,4 +100,6 @@ public  class sceneController {
         cad.initData(id,id_usuario,nome);
         stage.show();
     }
+
+    
 }

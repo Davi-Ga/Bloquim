@@ -169,8 +169,8 @@ public class anotacaoController {
     private Button xBtn;
 
     @FXML
-    void adicionaAnotacao(ActionEvent event) {
-
+    void adicionaAnotacao(ActionEvent event) throws IOException {
+        novaAnotacao(event);
     }
 
     @FXML
