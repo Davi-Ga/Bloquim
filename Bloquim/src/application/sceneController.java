@@ -57,14 +57,14 @@ public  class sceneController {
         stage.show();
     }
 
-    public void trocarParaTelaAnotacoes(ActionEvent event,int id,String nome) throws IOException, SQLException{
+    public void trocarParaTelaAnotacoes(ActionEvent event,int id,int id_usuario,String nome) throws IOException, SQLException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAnotacoes.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         anotacaoController anot = fxmlLoader.<anotacaoController>getController();
-        anot.initData(id,nome);
+        anot.initData(id,id_usuario,nome);
         stage.show();
     }
     
@@ -90,14 +90,14 @@ public  class sceneController {
         stage.show();
     }*/
 
-    public void trocarParaTelaEscreverAnotacao(ActionEvent event,int id,String nome) throws IOException{
+    public void trocarParaTelaEscreverAnotacao(ActionEvent event,int id,int id_usuario,String nome) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaEscreverAnotacao.fxml"));
         root = fxmlLoader.load();
         stage = ((Stage)((Node) event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
         escreverAnotacaoController cad = fxmlLoader.<escreverAnotacaoController>getController();
-        cad.initData(id,nome);
+        cad.initData(id,id_usuario,nome);
         stage.show();
     }
 }

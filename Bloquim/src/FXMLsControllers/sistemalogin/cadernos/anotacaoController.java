@@ -18,10 +18,16 @@ import javafx.stage.Stage;
 public class anotacaoController {
     private String nome;
     private int id;
+    private int id_usuario;
 
-    private int paginaIndice =1;
-    private int numPaginasIndice;
-    
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -37,6 +43,14 @@ public class anotacaoController {
     public void setId(int id) {
         this.id = id;
     }
+
+
+
+
+    private int paginaIndice =1;
+    private int numPaginasIndice;
+    
+    
 
 
 
@@ -59,12 +73,14 @@ public class anotacaoController {
 
 
     @FXML
-    public void initData(int id, String nome) throws SQLException{
+    public void initData(int id, int id_usuario, String nome) throws SQLException{
         setId(id);
         setNome(nome);
+        setId_usuario(id_usuario);
         nomeCadernoAnotacao.setText(getNome());
         anotacoes = conexaobd.Query.BuscaAnotações(getId());
         //setNumPaginasIndice((anotacoes.size()/8)+1);
+        System.out.println("id_caderno = "+getId());
         loadAnotacoes();
     }
     private void loadAnotacoes() throws SQLException{
@@ -231,7 +247,7 @@ public class anotacaoController {
     private void mostrarTelaCaderno(ActionEvent event) throws IOException, SQLException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaCaderno(event,getId(),getNome()); 
+        sc.trocarParaTelaCaderno(event,getId_usuario(),getNome()); 
     }
 
 
@@ -244,7 +260,7 @@ public class anotacaoController {
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
-        sc.trocarParaTelaEscreverAnotacao(event,getId(),getNome());
+        sc.trocarParaTelaEscreverAnotacao(event,getId(),getId_usuario(),getNome());
         System.out.println(nome);
     }
 

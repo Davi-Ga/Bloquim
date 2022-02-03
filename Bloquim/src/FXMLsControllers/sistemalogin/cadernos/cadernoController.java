@@ -296,7 +296,7 @@ public class cadernoController {
         fecharStage();
         int cadId = ((getPaginaIndice()-1)*8)+numBtn;
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,cadId,getNome());
+        sc.trocarParaTelaAnotacoes(event,cadId,getId(),getNome());
     }
 
     private void mostrarTelaLogin(ActionEvent event) throws IOException{
