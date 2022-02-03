@@ -94,7 +94,7 @@ public class Query {
 
     public static void insereAnotacao(String nomeAnotacao,String conteudo, Integer id_caderno) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
-        String sql = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+        String sql = "SELECT (nome,conteudo,id_cadernofk) FROM anotacoes WHERE nome = ? AND conteudo = ? AND id_cadernofk = ?";
         PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.setString(1, nomeAnotacao);
         stnt.setString(2, conteudo);
@@ -104,26 +104,28 @@ public class Query {
         stnt.execute();
         ResultSet resultSet = stnt.getResultSet();
         
-        boolean test = resultSet.next();
-            if(test == false || resultSet == null){
-                sql = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+        boolean testa = resultSet.next();
+            if(testa == false || resultSet == null){
+                String sqli = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+                PreparedStatement stnti = conexao.prepareStatement(sqli);
+                stnti.setString(1, nomeAnotacao);
+                stnti.setString(2, conteudo);
+                stnti.setInt(3, id_caderno);
                 
-                stnt.setString(1, nomeAnotacao);
-                stnt.setString(2, conteudo);
-                stnt.setInt(3, id_caderno);
-                
-                stnt.execute();
+                stnti.execute();
                 conexao.close();
-                
-            }else{
-                sql = "UPDATE anotacoes SET conteudo = ? WHERE nome = ? AND id_cadernofk = ?";
-                
-                stnt.setString(1, conteudo);
-                stnt.setString(2, nomeAnotacao);
-                stnt.setInt(3, id_caderno);
 
-                stnt.execute();
+
+            }else{
+                String sqlu = "UPDATE anotacoes SET conteudo = ? WHERE nome = ? AND id_cadernofk = ?";
+                PreparedStatement stntu = conexao.prepareStatement(sqlu);
+                stntu.setString(1, conteudo);
+                stntu.setString(2, nomeAnotacao);
+                stntu.setInt(3, id_caderno);
+
+                stntu.execute();
                 conexao.close();
+                
                
             }
         
