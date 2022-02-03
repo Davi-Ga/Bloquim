@@ -97,7 +97,7 @@ public class escreverAnotacaoController {
     void salvaAnotacao(ActionEvent event) throws SQLException, IOException {
         String titulo = tituloAnotacao.getText();
         String conteudo = conteudoText.getText();
-
+        //aaaaaaaaaaaaaaaaa
         conexaobd.Query.insereAnotacao(titulo, conteudo,getId());
         fecharStage();
         sceneController sc = new sceneController();
