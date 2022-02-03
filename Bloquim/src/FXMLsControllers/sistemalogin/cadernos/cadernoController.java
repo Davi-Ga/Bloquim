@@ -191,13 +191,17 @@ public class cadernoController {
     }*/
 
     @FXML
-    void adicionaCadernoNovo(ActionEvent event) throws IOException {
+    void adicionaCadernoNovo(ActionEvent event) throws IOException, SQLException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAddCaderno.fxml"));
         
         Stage stage = new Stage();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
+        telaAddCaderno addCad = fxmlLoader.<telaAddCaderno>getController();
+        addCad.initData(getId()); 
         stage.showAndWait();
+        cadernos = conexaobd.Query.BuscaCadernos(getId());
+        loadCadernos();
     }
 
     @FXML
@@ -275,8 +279,8 @@ public class cadernoController {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setHeaderText("Quer mesmo voltar à tela de Login?");
         alert.setContentText("Voltar à tela de Login irá resultar em um processo de Logoff.");
-        if(alert.showAndWait().get() != ButtonType.OK){
-            return;
+        if(alert.showAndWait().get() == ButtonType.OK){
+            mostrarTelaLogin(event);
         }
         
     }

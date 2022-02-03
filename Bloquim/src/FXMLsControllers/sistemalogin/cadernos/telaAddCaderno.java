@@ -55,4 +55,8 @@ public class telaAddCaderno {
         stage.close();
     }
 
+    public void initData(int id) {
+        setId(id);
+    }
+
 }
