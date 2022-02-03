@@ -57,7 +57,6 @@ public class anotacaoController {
 
     List<Anotacoes> anotacoes; 
 
-    
     public int getNumPaginasIndice() {
         return numPaginasIndice;
     }
@@ -85,10 +84,10 @@ public class anotacaoController {
     }
     private void loadAnotacoes() throws SQLException{
         
-       /* System.out.println("página atual: "+getPaginaIndice());
+        System.out.println("página atual: "+getPaginaIndice());
         System.out.println("Número de páginas: "+getNumPaginasIndice());
-        System.out.println("Número de cadernos: "+anotacoes.size());*/
-        // setNumPaginasIndice(cadernos.size());
+        System.out.println("Número de cadernos: "+anotacoes.size());
+        setNumPaginasIndice(anotacoes.size());
         Button[] btnList ={
             anotacao1,
             anotacao2,
@@ -99,7 +98,7 @@ public class anotacaoController {
             anotacao7,
             anotacao8
         };
-            /*for(int i=0;i<8;i++){
+            for(int i=0;i<8;i++){
                 
                 int anotIndice=(getPaginaIndice()-1)*8+i;
                 if(anotacoes.size()>anotIndice){
@@ -112,24 +111,21 @@ public class anotacaoController {
                 }
             }
         if(getNumPaginasIndice()==getPaginaIndice()){
-            proxPaginaBtn.setVisible(false);
+            paginaProxBtn.setVisible(false);
         }
         else{
-            proxPaginaBtn.setVisible(true);
+            paginaProxBtn.setVisible(true);
         }
 
         if(getPaginaIndice()==1){
-            paginaAnteBtn.setVisible(false);
+            antePagBtn.setVisible(false);
         }
         else{
-            paginaAnteBtn.setVisible(true);
-        }*/
+            antePagBtn.setVisible(true);
+        }
                 
     }
     
-    
-    
-
     @FXML
     private Button addCadernoBtn;
 
@@ -230,13 +226,19 @@ public class anotacaoController {
     }
 
     @FXML
-    void anteriorPag(ActionEvent event) {
-
+    void anteriorPag(ActionEvent event) throws SQLException {
+        if(getPaginaIndice()>1){
+            this.paginaIndice--;
+        }
+        loadAnotacoes();
     }
     
     @FXML
-    void proximaPag(ActionEvent event) {
-
+    void proximaPag(ActionEvent event) throws SQLException {
+        if((getPaginaIndice())<getNumPaginasIndice()){
+            this.paginaIndice++;
+        }
+        loadAnotacoes();
     }
 
     @FXML
