@@ -22,7 +22,13 @@ public class anotacaoController {
     private int paginaIndice =1;
     private int numPaginasIndice;
     
-    List<Anotacoes> anotacoes; 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public int getId() {
         return id;
@@ -32,13 +38,12 @@ public class anotacaoController {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
-    }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+
+
+    List<Anotacoes> anotacoes; 
+
+    
     public int getNumPaginasIndice() {
         return numPaginasIndice;
     }

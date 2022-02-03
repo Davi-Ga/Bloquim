@@ -209,9 +209,9 @@ public class cadernoController {
     @FXML
     void entraCaderno1(ActionEvent event) throws IOException, SQLException {
         
-        id = Query.pegaIDCaderno(getId());
+       
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,id,getNome());
+        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
     }
     @FXML
     void entraCaderno2(ActionEvent event) {
@@ -280,6 +280,13 @@ public class cadernoController {
         sceneController sc = new sceneController();
         sc.trocarParaTelaDiario(event,getId(),getNome());
     }*/
+    
+    
+    private void mostrarTelaDeAnotação(ActionEvent event) throws IOException, SQLException{
+        fecharStage();
+        sceneController sc = new sceneController();
+        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
+    }
 
     private void mostrarTelaLogin(ActionEvent event) throws IOException{
         fecharStage();
