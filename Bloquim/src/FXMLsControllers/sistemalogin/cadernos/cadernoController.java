@@ -24,13 +24,29 @@ import javafx.scene.control.ButtonType;
 public class cadernoController {
 
     protected int id;
+    protected String nome;
     
     private int paginaIndice =1;
     private int numPaginasIndice;
 
-    List<Caderno> cadernos;  
+    List<Caderno> cadernos; 
     
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 
     public int getNumPaginasIndice() {
         return numPaginasIndice;
@@ -48,7 +64,6 @@ public class cadernoController {
 
 
 
-    protected String nome;
 
     public void initData(int id,String nome) throws SQLException{
         setId(id);
@@ -117,21 +132,7 @@ public class cadernoController {
        //I want to add a button in this function
     } 
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    
 
 
     
@@ -188,8 +189,9 @@ public class cadernoController {
     }*/
 
     @FXML
-    void adicionaCadernoNovo(ActionEvent event) {
-
+    void adicionaCadernoNovo(ActionEvent event) throws IOException {
+        sceneController sc = new sceneController();
+        sc.abreTelaAddCaderno(event);
     }
 
     @FXML
@@ -246,7 +248,7 @@ public class cadernoController {
     void entraCaderno8(ActionEvent event) {
 
     }
-    
+
     @FXML
     void proxPagina(ActionEvent event) throws SQLException {
         if((getPaginaIndice())<getNumPaginasIndice()){

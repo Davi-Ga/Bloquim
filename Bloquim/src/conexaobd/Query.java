@@ -43,5 +43,35 @@ public class Query {
         return cadList;
 
     }
+    public static void insereCadernos(String nomeCaderno, Integer id_usuario) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "INSERT INTO cadernos(nome,id_usuariofk) VALUES = (?,?)";
+        PreparedStatement stnt = conexao.prepareStatement(sql);
+        stnt.setString(1, nomeCaderno);
+        stnt.setInt(2, id_usuario);
+        // stnt.executeQuery();
+        //executa
+        stnt.execute();
+    }
 
+
+    public static String BuscaAnotações(Integer id_caderno) throws SQLException{
+        Connection conexao = new conexaoBancoDeDados().getConnection();
+        String sql = "SELECT id_anotacoes,nome,conteúdo,id_cadernofk FROM anotacoes WHERE id_cadernofk = ?";
+        PreparedStatement stnt = conexao.prepareStatement(sql);
+        stnt.setInt(1, id_caderno);
+        // stnt.executeQuery();
+        //executa
+        ResultSet resultSet = stnt.executeQuery();
+        
+        while(resultSet.next()){
+
+
+
+
+
+
+        }
+        return sql;
+    }
 }
