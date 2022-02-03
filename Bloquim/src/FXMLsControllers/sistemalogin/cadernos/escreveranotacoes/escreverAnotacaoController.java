@@ -6,7 +6,10 @@ import java.sql.SQLException;
 import application.sceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -71,6 +74,8 @@ public class escreverAnotacaoController {
     @FXML
     void fechaAba(ActionEvent event) {
 
+        
+        System.exit(0);
     }
 
     @FXML
