@@ -46,7 +46,7 @@ public class usuarioDAO {
         ResultSet resultSet = stnt.getResultSet();
         resultSet.next();
         Integer idUser = resultSet.getInt("id_usuario");
-        conexao.close();
+        
 
         return idUser;
     }
@@ -62,7 +62,7 @@ public class usuarioDAO {
         ResultSet resultSet = stnt.getResultSet();
         resultSet.next();
         String nomeUser = resultSet.getString("nome");
-        conexao.close();
+        
 
         return nomeUser;
     }

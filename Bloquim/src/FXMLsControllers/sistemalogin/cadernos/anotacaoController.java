@@ -59,14 +59,14 @@ public class anotacaoController {
         setNome(nome);
         nomeCadernoAnotacao.setText(getNome());
         anotacoes = conexaobd.Query.BuscaAnotações(getId());
-        setNumPaginasIndice((anotacoes.size()/8)+1);
+        //setNumPaginasIndice((anotacoes.size()/8)+1);
         loadAnotacoes();
     }
     private void loadAnotacoes() throws SQLException{
         
-        System.out.println("página atual: "+getPaginaIndice());
+       /* System.out.println("página atual: "+getPaginaIndice());
         System.out.println("Número de páginas: "+getNumPaginasIndice());
-        System.out.println("Número de cadernos: "+anotacoes.size());
+        System.out.println("Número de cadernos: "+anotacoes.size());*/
         // setNumPaginasIndice(cadernos.size());
         Button[] btnList ={
             anotacao1,
@@ -78,8 +78,7 @@ public class anotacaoController {
             anotacao7,
             anotacao8
         };
-
-            for(int i=0;i<8;i++){
+            /*for(int i=0;i<8;i++){
                 
                 int anotIndice=(getPaginaIndice()-1)*8+i;
                 if(anotacoes.size()>anotIndice){
@@ -103,7 +102,7 @@ public class anotacaoController {
         }
         else{
             paginaAnteBtn.setVisible(true);
-        }
+        }*/
                 
     }
     
@@ -137,11 +136,6 @@ public class anotacaoController {
     @FXML
     private Button anotacao8;
 
-    @FXML
-    private Button paginaAnteBtn;
-
-    @FXML
-    private Button proxPaginaBtn;
 
     @FXML
     private Text nomeCadernoAnotacao;
@@ -207,20 +201,6 @@ public class anotacaoController {
     @FXML
     void verAnotacao8(ActionEvent event) {
 
-    }
-    @FXML
-    void paginaAnterior(ActionEvent event) throws SQLException {
-        if(getPaginaIndice()>1){
-            this.paginaIndice--;
-        }
-        loadAnotacoes();
-    }
-    
-    void proxPagina(ActionEvent event) throws SQLException {
-        if((getPaginaIndice())<getNumPaginasIndice()){
-            this.paginaIndice++;
-        }
-        loadAnotacoes();
     }
     
 

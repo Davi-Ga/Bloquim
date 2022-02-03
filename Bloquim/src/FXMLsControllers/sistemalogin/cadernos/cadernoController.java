@@ -209,8 +209,9 @@ public class cadernoController {
     @FXML
     void entraCaderno1(ActionEvent event) throws IOException, SQLException {
         
+        id = Query.pegaIDCaderno(getId());
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
+        sc.trocarParaTelaAnotacoes(event,id,getNome());
     }
     @FXML
     void entraCaderno2(ActionEvent event) {

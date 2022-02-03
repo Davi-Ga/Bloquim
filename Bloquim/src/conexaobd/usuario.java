@@ -4,7 +4,6 @@ public class usuario {
     private String nome;
     private String senha;
     private String email;
-    private String id;
 
         public usuario(String nome, String senha, String email){
             this.nome = nome;

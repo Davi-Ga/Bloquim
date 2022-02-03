@@ -65,7 +65,7 @@ public class Query {
     public static List<Anotacoes> BuscaAnotações(Integer id_caderno) throws SQLException{
         List<Anotacoes> anotList = new ArrayList<Anotacoes>();
         Connection conexao = new conexaoBancoDeDados().getConnection();
-        String sql = "SELECT id_anotacoes,nome,conteúdo,id_cadernofk FROM anotacoes WHERE id_cadernofk = ?";
+        String sql = "SELECT id_anotacoes,nome,conteudo,id_cadernofk FROM anotacoes WHERE id_cadernofk = ?";
         PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.setInt(1, id_caderno);
         // stnt.executeQuery();
@@ -104,7 +104,7 @@ public class Query {
         conexao.close();
     }
 
-    public Integer pegaIDCaderno(Integer id_usuariofk) throws SQLException{
+    public static Integer pegaIDCaderno(Integer id_usuariofk) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
         String sql = "SELECT id_caderno FROM caderno WHERE id_usuariofk = ?";
         PreparedStatement stnt= conexao.prepareStatement(sql);
@@ -113,7 +113,7 @@ public class Query {
         ResultSet resultSet = stnt.getResultSet();
         resultSet.next();
         Integer idCaderno = resultSet.getInt("id_caderno");
-        conexao.close();
+
         
         return idCaderno;
     }
