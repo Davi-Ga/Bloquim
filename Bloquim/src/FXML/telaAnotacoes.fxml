@@ -72,5 +72,15 @@
             <Font size="11.0" />
          </font>
       </Button>
+      <Button fx:id="antePagBtn" layoutX="408.0" layoutY="98.0" mnemonicParsing="false" onAction="#anteriorPag" prefHeight="17.0" prefWidth="32.0" style="-fx-background-color: #3F435A;" text="&lt;" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="paginaProxBtn" layoutX="461.0" layoutY="98.0" mnemonicParsing="false" onAction="#proximaPag" prefHeight="17.0" prefWidth="32.0" style="-fx-background-color: #3F435A;" text="&gt;" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

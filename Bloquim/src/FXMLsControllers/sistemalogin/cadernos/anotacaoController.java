@@ -136,6 +136,11 @@ public class anotacaoController {
     @FXML
     private Button anotacao8;
 
+    @FXML
+    private Button antePagBtn;
+
+    @FXML
+    private Button paginaProxBtn;
 
     @FXML
     private Text nomeCadernoAnotacao;
@@ -202,8 +207,16 @@ public class anotacaoController {
     void verAnotacao8(ActionEvent event) {
 
     }
-    
 
+    @FXML
+    void anteriorPag(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void proximaPag(ActionEvent event) {
+
+    }
 
     @FXML
     void voltaTela(ActionEvent event) throws IOException, SQLException {
