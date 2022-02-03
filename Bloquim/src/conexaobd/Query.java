@@ -37,7 +37,7 @@ public class Query {
             Caderno cad = new Caderno(id_caderno, nomeCaderno, id_usuariofk);
             //adiciona objeto caderno à lista
             cadList.add(cad);
-            
+            conexao.close();
         }
 
         
