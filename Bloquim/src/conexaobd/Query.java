@@ -94,15 +94,35 @@ public class Query {
 
     public static void insereAnotacao(String nomeAnotacao,String conteudo, Integer id_caderno) throws SQLException{
         Connection conexao = new conexaoBancoDeDados().getConnection();
-        String sql = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+        String sql = "INSERT INTO anotacoes(nome,id_caderno) VALUES (?,?)";
         PreparedStatement stnt = conexao.prepareStatement(sql);
         stnt.setString(1, nomeAnotacao);
-        stnt.setString(2, conteudo);
-        stnt.setInt(3, id_caderno);
+        stnt.setInt(2, id_caderno);
         // stnt.executeQuery();
         //executa
         stnt.execute();
-        conexao.close();
+        ResultSet resultSet = stnt.getResultSet();
+            if(resultSet.next() == true){
+                sql = "UPDATE anotacoes SET conteudo = ? WHERE nome = ? AND id_cadernofk = ?";
+                
+                stnt.setString(1, conteudo);
+                stnt.setString(2, nomeAnotacao);
+                stnt.setInt(3, id_caderno);
+
+                stnt.execute();
+                conexao.close();
+            }else{
+                sql = "INSERT INTO anotacoes(nome,conteudo,id_cadernofk) VALUES (?,?,?)";
+                
+                stnt.setString(1, nomeAnotacao);
+                stnt.setString(2, conteudo);
+                stnt.setInt(3, id_caderno);
+                
+                stnt.execute();
+                conexao.close();
+            }
+        
+        
     }
 
     public static Integer pegaIDCaderno(Integer id_usuariofk) throws SQLException{
