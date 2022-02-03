@@ -11,6 +11,8 @@ import application.sceneController;
 import conexaobd.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
@@ -98,13 +100,11 @@ public class cadernoController {
             
             int cadIndice=(getPaginaIndice()-1)*8+i;
             if(cadernos.size()>cadIndice){
-                System.out.println("aaaaa");
                 btnList[i].setVisible(true);
                 btnList[i].setText(cadernos.get(cadIndice).getNome());
             }
             else{
-                System.out.println("bbbbb");
-                // int btnIndice=i-((getPaginaIndice()-1)*8);
+                
                 btnList[i].setVisible(false);
             }
             
@@ -192,8 +192,12 @@ public class cadernoController {
 
     @FXML
     void adicionaCadernoNovo(ActionEvent event) throws IOException {
-        sceneController sc = new sceneController();
-        sc.abreTelaAddCaderno(event);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/telaAddCaderno.fxml"));
+        
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 
     @FXML
