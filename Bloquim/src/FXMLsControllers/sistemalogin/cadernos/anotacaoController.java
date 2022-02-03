@@ -257,8 +257,7 @@ public class anotacaoController {
         Stage stage = (Stage) xBtn.getScene().getWindow();
         stage.close();
     }
-
-    
+ 
     void novaAnotacao(ActionEvent event) throws IOException{
         fecharStage();
         sceneController sc = new sceneController();
