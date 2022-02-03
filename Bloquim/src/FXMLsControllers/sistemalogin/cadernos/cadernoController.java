@@ -172,8 +172,9 @@ public class cadernoController {
     }*/
 
     @FXML
-    void adicionaCadernoNovo(ActionEvent event) {
-
+    void adicionaCadernoNovo(ActionEvent event) throws IOException {
+        sceneController sc = new sceneController();
+        sc.abreTelaAddCaderno(event);
     }
 
     @FXML
@@ -230,7 +231,7 @@ public class cadernoController {
     void entraCaderno8(ActionEvent event) {
 
     }
-    
+
     @FXML
     void proxPagina(ActionEvent event) {
 
