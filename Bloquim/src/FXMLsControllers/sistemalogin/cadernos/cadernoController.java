@@ -4,6 +4,8 @@ package FXMLsControllers.sistemalogin.cadernos;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import application.Caderno;
@@ -32,6 +34,7 @@ public class cadernoController {
     private int numPaginasIndice;
 
     List<Caderno> cadernos; 
+    List<Integer> cadernosIds ;
     
     public String getNome() {
         return nome;
@@ -66,16 +69,24 @@ public class cadernoController {
         setNome(nome);
         nomeLabelText.setText(getNome());
         cadernos = conexaobd.Query.BuscaCadernos(getId());
+        this.cadernosIds= associaCadernosAListaDeIds();
         setNumPaginasIndice((cadernos.size()/8)+1);
         loadCadernos();
  
     }
 
+    private List<Integer> associaCadernosAListaDeIds(){
+        List<Integer> cadIds = new ArrayList<Integer>();
+        for(int i=0;i<cadernos.size();i++){
+
+            cadIds.add(this.cadernos.get(i).getId());
+        }
+        return cadIds;
+    }
+
     private void loadCadernos() throws SQLException{
         
-        System.out.println("página atual: "+getPaginaIndice());
-        System.out.println("Número de páginas: "+getNumPaginasIndice());
-        System.out.println("Número de cadernos: "+cadernos.size());
+        
         // setNumPaginasIndice(cadernos.size());
         Button[] btnList ={
             caderno001,
@@ -186,6 +197,7 @@ public class cadernoController {
         addCad.initData(getId()); 
         stage.showAndWait();
         cadernos = conexaobd.Query.BuscaCadernos(getId());
+        this.cadernosIds= associaCadernosAListaDeIds();
         setNumPaginasIndice((cadernos.size()/8)+1);
         loadCadernos();
     }
@@ -209,43 +221,41 @@ public class cadernoController {
     @FXML
     void entraCaderno1(ActionEvent event) throws IOException, SQLException {
         
-       
-        sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
+        mostrarTelaDeAnotação(event, 1);
     }
     @FXML
-    void entraCaderno2(ActionEvent event) {
-
+    void entraCaderno2(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 2);
     }
 
     @FXML
-    void entraCaderno3(ActionEvent event) {
-
+    void entraCaderno3(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 3);
     }
 
     @FXML
-    void entraCaderno4(ActionEvent event) {
-
+    void entraCaderno4(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 4);
     }
 
     @FXML
-    void entraCaderno5(ActionEvent event) {
-
+    void entraCaderno5(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 5);
     }
 
     @FXML
-    void entraCaderno6(ActionEvent event) {
-
+    void entraCaderno6(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 6);
     }
 
     @FXML
-    void entraCaderno7(ActionEvent event) {
-
+    void entraCaderno7(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 7);
     }
 
     @FXML
-    void entraCaderno8(ActionEvent event) {
-
+    void entraCaderno8(ActionEvent event) throws IOException, SQLException {
+        mostrarTelaDeAnotação(event, 8);
     }
 
     @FXML
@@ -282,10 +292,11 @@ public class cadernoController {
     }*/
     
     
-    private void mostrarTelaDeAnotação(ActionEvent event) throws IOException, SQLException{
+    private void mostrarTelaDeAnotação(ActionEvent event,int numBtn) throws IOException, SQLException{
         fecharStage();
+        int cadId = ((getPaginaIndice()-1)*8)+numBtn;
         sceneController sc = new sceneController();
-        sc.trocarParaTelaAnotacoes(event,getId(),getNome());
+        sc.trocarParaTelaAnotacoes(event,cadId,getNome());
     }
 
     private void mostrarTelaLogin(ActionEvent event) throws IOException{
