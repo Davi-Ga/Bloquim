@@ -86,6 +86,7 @@ public class Query {
             Anotacoes anot = new Anotacoes(id_anotacoes, nomeAnotacoes,conteudo ,id_cadernofk);
             //adiciona objeto caderno à lista
             anotList.add(anot);
+            conexao.close();
 
         }
         return anotList;
